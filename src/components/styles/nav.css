@@ -1,0 +1,86 @@
+.nav {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 100;
+}
+
+@media (max-width: 1150px) {
+  .nav {
+    right: 10px;
+  }
+}
+
+.active .dot {
+  background: rgb(27, 27, 27);
+}
+
+ul.nav-items li::before {
+  content: "";
+}
+
+.nav-items li {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50px;
+}
+
+.nav-items a {
+  /* display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-decoration: none; */
+  cursor: pointer;
+  max-width: 20px;
+  order: 2;
+}
+
+.dot {
+  position: relative;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: rgba(58, 58, 58, 0.25);
+  transition: transform 0.2s, background-color 0.5s;
+  transform-origin: 50% 50%;
+  display: inline-block;
+  z-index: 150;
+  /* order: 2; */
+}
+
+.dot-label {
+  position: relative;
+  top: 3px;
+  padding-right: 0.8em;
+  color: #6e6e6e;
+  font-family: Gotham, Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  text-transform: uppercase;
+  display: none;
+  opacity: 0;
+  transition: transform 0.2s, opacity 0.2s;
+  transform-origin: 100% 50%;
+  order: 1;
+  user-select: none;
+}
+
+.nav-items a:hover .dot {
+  transform: scale(1.5);
+}
+
+.nav-items a:hover + span.dot-label {
+  display: block;
+  opacity: 1;
+}
+
+@media (max-width: 850px) {
+  .nav-items {
+    display: none;
+  }
+}

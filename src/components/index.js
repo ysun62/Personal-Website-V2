@@ -1,0 +1,5 @@
+export { default as Layout } from "./layout"
+export { default as Hero } from "./sections/hero"
+export { default as About } from "./sections/about"
+export { default as Jobs } from "./sections/jobs/jobs"
+export { default as Projects } from "./sections/projects/projects"
