@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 120px 0 30px 30px;
+  padding: 120px 0 30px 0;
 `
 
 const StyledFooterLink = styled(StyledLink)`

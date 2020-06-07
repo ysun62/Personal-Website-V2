@@ -640,6 +640,7 @@ header .burger {
   right: 20px;
   top: 15px;
   display: none;
+  z-index: 200;
 }
 
 header .burger .burger-lines,
