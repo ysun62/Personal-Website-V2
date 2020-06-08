@@ -1,7 +1,7 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { FaGithub } from "react-icons/fa"
-import { AiOutlineFundProjectionScreen } from "react-icons/ai"
+import { FiExternalLink } from "react-icons/fi"
 import Tippy from "@tippyjs/react"
 import "tippy.js/dist/tippy.css"
 import Card from "@material-ui/core/Card"
@@ -84,21 +84,29 @@ export default function Project({ data }) {
         <Typography variant="h5" component="h1" className={classes.title}>
           {title}
         </Typography>
-        <Typography className={classes.pos} color="textSecondary">
+        <Typography
+          className={classes.pos}
+          color="textSecondary"
+          component="div"
+        >
           <ul className={classes.ul}>
-            {tech.map(t => {
-              return <li className={classes.li}>{t}</li>
+            {tech.map((t, i) => {
+              return (
+                <li className={classes.li} key={i}>
+                  {t}
+                </li>
+              )
             })}
           </ul>
         </Typography>
-        <Typography variant="body2" component="p" className={classes.desc}>
+        <Typography variant="body2" component="div" className={classes.desc}>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </Typography>
       </CardContent>
       <CardActions className={classes.bottomRight}>
         <Tippy content="Demo" arrow="">
           <a href={demo} target="_blank" className={classes.link}>
-            <AiOutlineFundProjectionScreen />
+            <FiExternalLink />
           </a>
         </Tippy>
         <Tippy content="Github" arrow="">
