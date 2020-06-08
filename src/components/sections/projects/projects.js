@@ -20,10 +20,6 @@ const StyledGrid = styled.div`
 `
 
 const Projects = ({ data }) => {
-  console.log(data)
-  //   data.map(d => console.log(d))
-  //   const [activeTabIndex, setActiveTabIndex] = useState(0)
-
   return (
     <StyledSection id="projects">
       <StyledWrapper>

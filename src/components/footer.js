@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa"
 import { FiMail } from "react-icons/fi"
-import { GrDocumentText } from "react-icons/gr"
+import { AiOutlineFilePdf } from "react-icons/ai"
 import { StyledContact, StyledLinkWrapper, StyledLink } from "./styles/content"
 
 const StyledFooter = styled.footer`
@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 120px 0 30px 0;
+  padding: 120px 0 40px 0;
 `
 
 const StyledFooterLink = styled(StyledLink)`
@@ -38,11 +38,20 @@ export default function Footer() {
             <FiMail />
           </StyledFooterLink>
           <StyledFooterLink target="_blank">
-            <GrDocumentText />
+            <AiOutlineFilePdf />
           </StyledFooterLink>
         </StyledLinkWrapper>
       </StyledContact>
-      <div style={{ paddingTop: "7px" }}>Made With ❤️ - Young Sun 2020</div>
+      <div
+        style={{
+          paddingTop: "15px",
+          color: "var(--textTitle)",
+          fontSize: "0.9rem",
+          fontWeight: "500",
+        }}
+      >
+        Young Sun 2020 - Powered by Gatsby ❤️
+      </div>
     </StyledFooter>
   )
 }

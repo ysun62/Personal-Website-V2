@@ -3,4 +3,4 @@ title: Hi!
 contact: Get in touch
 ---
 
-I'm **Young Sun**, a design-minded front-end software engineer focused on building beautiful interfaces & experiences
+I'm **Young Sun**, a passionate front end engineer who is dedicated to building modern & highly scalable web apps.

@@ -26,14 +26,6 @@ const Skill = styled.li`
   display: flex;
   align-items: center;
   font-size: 0.8em;
-
-  &::before {
-    content: "▹";
-    position: absolute;
-    left: 0;
-
-    line-height: 12px;
-  }
 `
 
 const About = ({ data }) => {

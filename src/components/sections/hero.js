@@ -2,7 +2,7 @@ import React from "react"
 import styled, { keyframes } from "styled-components"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa"
 import { FiMail } from "react-icons/fi"
-import { GrDocumentText } from "react-icons/gr"
+import { AiOutlineFilePdf } from "react-icons/ai"
 import { StyledContact, StyledLinkWrapper, StyledLink } from "../styles/content"
 
 const StyledSection = styled.section`
@@ -10,6 +10,7 @@ const StyledSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--textNormal);
 `
 
 const StyledWrapper = styled.div`
@@ -66,6 +67,11 @@ const StyledSubtitle = styled.h2`
   max-width: 700px;
   font-size: 2.4rem;
 
+  > p > strong {
+    color: #005ec2;
+    color: var(--textSpecial);
+  }
+
   @media (max-width: 1024px) {
     font-size: 2rem;
   }
@@ -104,8 +110,8 @@ const Hero = ({ data }) => {
             <StyledLink href="mailto:ysun9596@gmail.com" target="_blank">
               <FiMail />
             </StyledLink>
-            <StyledLink target="_blank">
-              <GrDocumentText />
+            <StyledLink href="#" target="_blank">
+              <AiOutlineFilePdf />
             </StyledLink>
           </StyledLinkWrapper>
         </StyledContact>

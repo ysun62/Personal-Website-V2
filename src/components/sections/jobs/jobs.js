@@ -14,7 +14,7 @@ const StyledUL = styled.ul`
   align-items: center;
   justify-content: flex-start;
   max-width: 450px;
-  border-top: 3px solid #e6f1ff;
+  border-top: 3px solid var(--sliderBorder);
   margin-left: 0;
 
   > li::before {
@@ -32,10 +32,13 @@ const StyledLi = styled.li`
   cursor: pointer;
   align-items: center;
   text-align: center;
+  font-weight: 400;
 
   &:hover {
-    background: grey;
-    color: lightblue;
+    background: var(--btnBg);
+  }
+  &:hover > button {
+    color: var(--textSpecial);
   }
 `
 
@@ -45,6 +48,10 @@ const StyledButton = styled.button`
   border: none;
   outline: none;
   background: none;
+  color: ${props =>
+    props.id === props.activeTabIndex
+      ? "var(--textSpecial)"
+      : "var(--normalText)"};
 
   @media (max-width: 850px) {
     font-size: 0.85rem;
@@ -57,7 +64,7 @@ const StyledLine = styled.span`
   left: 0;
   height: 3px;
   width: 33.333%;
-  background: #303c55;
+  background: var(--textSpecial);
   transition: 0.3s;
   transform: translateX(
     ${props => (props.activeTabIndex > 0 ? props.activeTabIndex * 100 : 0)}%
@@ -81,7 +88,7 @@ const Jobs = ({ data }) => {
                   key={i}
                   onClick={() => setActiveTabIndex(i)}
                 >
-                  <StyledButton>
+                  <StyledButton id={i} activeTabIndex={activeTabIndex}>
                     {d.node.frontmatter.companyAbbrev}
                   </StyledButton>
                 </StyledLi>

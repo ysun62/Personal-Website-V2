@@ -3,10 +3,10 @@ date: "2019-04-01"
 title: "Grader"
 companyAbbrev: "UCSC"
 company: "University of California, Santa Cruz"
-location: "Remote"
-range: "Dec 2019 - Mar 2020"
+location: "Santa Cruz, CA"
+range: "Apr 2019 - Jun 2019"
 url: "https://www.ucsc.edu/"
 ---
 
-- Improved site performance, security, responsiveness, scalability and aesthetics.
-- Redesigned and developed the company website based on the old one with ReactJS.
+- Graded weekly assignments in a timely manner.
+- Constructed and delivered critical feedback to each student.

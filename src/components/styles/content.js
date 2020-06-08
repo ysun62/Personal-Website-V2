@@ -5,6 +5,7 @@ export const StyledSection = styled.section`
   align-items: center;
   justify-content: center;
   //   width: 100vw;
+  color: var(--textNormal);
 `
 
 export const StyledWrapper = styled.div`
@@ -34,6 +35,8 @@ export const StyledTitle = styled.h5`
   padding-right: 70px;
   width: 200px;
   text-align: right;
+  // color: #005ec2;
+  color: var(--textSpecial);
 
   @media (max-width: 1300px) {
     width: 170px;
@@ -52,11 +55,11 @@ export const StyledTitle = styled.h5`
 
 export const StyledContent = styled.div`
   font-weight: 300;
-  max-width: 700px;
+  width: 700px;
   font-size: 1.3rem;
 
-  @media (max-width: 1300px) {
-    max-width: 600px;
+  @media (max-width: 1200px) {
+    width: 600px;
   }
   @media (max-width: 1024px) {
     // padding-left: 50px;
@@ -96,9 +99,18 @@ export const StyledLink = styled.a`
   margin-right: 25px;
   cursor: pointer;
   font-size: 1.5rem;
-  color: black;
+  // color: black;
+  color: var(--social);
 
   @media (max-width: 850px) {
     font-size: 1.3rem;
+  }
+`
+
+export const StyledHtmlLink = styled.div`
+  color: var(--textNormal);
+  a {
+    // color: #007bff;
+    color: var(--textSpecial);
   }
 `

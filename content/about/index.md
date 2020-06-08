@@ -9,8 +9,8 @@ skills:
   - MySQL
 ---
 
-I'm a recent grad from the University of California, Santa Cruz. I'm currently interning as a Full Stack Developer (Front End focused) at a startup in the Bay Area.
+I'm a recent grad from the University of California, Santa Cruz. Currently, I'm interning at a startup in the bay area as a full stack developer, with a focus on front end. However, I am in the job market actively seeking full-time/contracting opportunities.
 
-As a developer, I love the web. fweiofnodsvcmwueofhindslmkcfoiwefhnvowe
+In my free time, I enjoy shooting hoops, stumping noobs in Dota 2 😈, and keeping myself informed on the web technologies.
 
 Here are a few technologies I've been working with recently:

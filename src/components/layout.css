@@ -8,7 +8,38 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --bg: white;
+  --textNormal: #444452;
+  --textTitle: #444452;
+  --textSubTitle: #656575;
+  --textSpecial: #e1b23a;
+  --textLink: #137591;
+  --social: #000000;
+  --cardBg: rgb(253, 253, 253);
+  --btnBg: #94979925;
+  --dotBg: rgba(58, 58, 58, 0.25);
+  --sliderBorder: #0a192f25;
+
+  background-color: var(--bg);
 }
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+
+  --bg: #0a192f;
+  --textNormal: rgb(201, 210, 238);
+  --textTitle: rgb(204, 214, 246);
+  --textSubTitle: rgb(136, 146, 176);
+  --textSpecial: #e1b23a;
+  --textLink: #369ab6;
+  --social: rgb(201, 210, 238);
+  --cardBg: #172a45;
+  --btnBg: rgb(23, 42, 69);
+  --dotBg: rgb(204, 214, 246);
+  --sliderBorder: rgb(201, 210, 238);
+}
+
 article,
 aside,
 details,
@@ -630,10 +661,19 @@ ul li::before {
   content: "▹";
   position: absolute;
   left: 0px;
-  color: rgb(50, 87, 78);
+  color: var(--textSpecial);
 }
 
 /* Header burger */
+header .toggler {
+  position: fixed;
+  font-size: 10px;
+  right: 30px;
+  top: 30px;
+  z-index: 200;
+  cursor: pointer;
+}
+
 header .burger {
   position: fixed;
   font-size: 10px;

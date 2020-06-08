@@ -16,7 +16,7 @@
 }
 
 .active .dot {
-  background: rgb(27, 27, 27);
+  background: var(--textSpecial);
 }
 
 ul.nav-items li::before {
@@ -45,7 +45,7 @@ ul.nav-items li::before {
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background: rgba(58, 58, 58, 0.25);
+  background: var(--dotBg);
   transition: transform 0.2s, background-color 0.5s;
   transform-origin: 50% 50%;
   display: inline-block;
@@ -77,6 +77,7 @@ ul.nav-items li::before {
 .nav-items a:hover + span.dot-label {
   display: block;
   opacity: 1;
+  color: var(--textSpecial);
 }
 
 @media (max-width: 850px) {

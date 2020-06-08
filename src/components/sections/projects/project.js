@@ -8,6 +8,7 @@ import Card from "@material-ui/core/Card"
 import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
 import Typography from "@material-ui/core/Typography"
+import { StyledHtmlLink } from "../../styles/content"
 
 const useStyles = makeStyles({
   root: {
@@ -18,6 +19,8 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    backgroundColor: "var(--cardBg)",
+    color: "var(--textNormal)",
   },
   bullet: {
     display: "inline-block",
@@ -29,6 +32,7 @@ const useStyles = makeStyles({
   },
   title: {
     fontSize: "1.4rem",
+    color: "var(--textTitle)",
   },
   desc: {
     fontSize: 16,
@@ -39,8 +43,8 @@ const useStyles = makeStyles({
   mb: {
     marginBottom: 50,
   },
-  link: {
-    color: "black",
+  action: {
+    color: "var(--social)",
     marginRight: "12px",
     fontSize: "1.3rem",
   },
@@ -56,8 +60,10 @@ const useStyles = makeStyles({
     justifyContent: "flex-start",
   },
   li: {
-    paddingRight: 13,
+    // paddingRight: 13,
     fontSize: 15,
+    color: "var(--textSubTitle)",
+    fontStyle: "italic",
 
     "&::before": {
       content: '""',
@@ -70,13 +76,18 @@ export default function Project({ data }) {
   const bull = <span className={classes.bullet}>•</span>
   const { frontmatter, html } = data.node
   const { numbering, title, github, demo, tech } = frontmatter
+  const techLen = tech.length - 1
 
   return (
     <Card className={`${classes.root} ${classes.mb}`}>
       <CardContent style={{ width: "88%" }}>
         <Typography
           className={classes.numbering}
-          color="textSecondary"
+          style={{
+            color: "var(--textSpecial)",
+            fontSize: "0.9rem",
+            fontWeight: "600",
+          }}
           gutterBottom
         >
           {numbering}
@@ -91,29 +102,43 @@ export default function Project({ data }) {
         >
           <ul className={classes.ul}>
             {tech.map((t, i) => {
-              return (
-                <li className={classes.li} key={i}>
-                  {t}
-                </li>
-              )
+              if (techLen !== i && i !== 0) {
+                return (
+                  <li className={classes.li} key={i}>
+                    &nbsp;{t} ●
+                  </li>
+                )
+              } else if (i === 0) {
+                return (
+                  <li className={classes.li} key={i}>
+                    {t} ●
+                  </li>
+                )
+              } else {
+                return (
+                  <li className={classes.li} key={i}>
+                    &nbsp;{t}
+                  </li>
+                )
+              }
             })}
           </ul>
         </Typography>
         <Typography variant="body2" component="div" className={classes.desc}>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <StyledHtmlLink dangerouslySetInnerHTML={{ __html: html }} />
         </Typography>
       </CardContent>
       <CardActions className={classes.bottomRight}>
         <Tippy content="Demo" arrow="">
           {demo && (
-            <a href={demo} target="_blank" className={classes.link}>
+            <a href={demo} target="_blank" className={classes.action}>
               <FiExternalLink />
             </a>
           )}
         </Tippy>
         <Tippy content="Github" arrow="">
           {github && (
-            <a href={github} target="_blank" className={classes.link}>
+            <a href={github} target="_blank" className={classes.action}>
               <FaGithub />
             </a>
           )}
