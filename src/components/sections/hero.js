@@ -29,6 +29,10 @@ const StyledWrapper = styled.div`
     padding: 120px 0;
   }
   @media (max-width: 850px) {
+    padding: 0;
+  }
+  @media only screen and (min-device-width: 300px) and (max-device-width: 850px) and (orientation: landscape) {
+    font-size: 0.5rem;
   }
 `
 
@@ -41,6 +45,9 @@ const StyledTitle = styled.h1`
   }
   @media (max-width: 850px) {
     font-size: 2rem;
+  }
+  @media only screen and (min-device-width: 300px) and (max-device-width: 850px) and (orientation: landscape) {
+    font-size: 1.5rem;
   }
 `
 const wave = keyframes`
@@ -77,6 +84,9 @@ const StyledSubtitle = styled.h2`
   }
   @media (max-width: 850px) {
     font-size: 1.6rem;
+  }
+  @media only screen and (min-device-width: 300px) and (max-device-width: 850px) and (orientation: landscape) {
+    font-size: 1.5rem;
   }
 `
 

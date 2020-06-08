@@ -279,7 +279,6 @@ h2 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -686,10 +685,13 @@ header .burger {
 header .burger .burger-lines,
 header .burger .burger-lines::after,
 header .burger .burger-lines::before {
-  background: black;
+  background: var(--textSpecial);
 }
 
 @media (max-width: 850px) {
+  header .toggler {
+    display: none;
+  }
   header .burger {
     display: block;
   }

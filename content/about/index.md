@@ -1,12 +1,12 @@
 ---
 title: "About"
 skills:
-  - JavaScript (ES6)
-  - HTML & CSS
   - React
-  - Django
+  - HTML & CSS
+  - JavaScript (ES6)
   - Node
-  - MySQL
+  - Gatsby
+  - Django
 ---
 
 I'm a recent grad from the University of California, Santa Cruz. Currently, I'm interning at a startup in the bay area as a full stack developer, with a focus on front end. However, I am in the job market actively seeking full-time/contracting opportunities.

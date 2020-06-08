@@ -21,11 +21,11 @@ export const StyledWrapper = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 120px 0;
+    padding: 60px 0 100px 0;
     text-align: left;
   }
   @media (max-width: 850px) {
-    // width: 85vw;
+    padding-bottom: 80px;
   }
 `
 
@@ -87,6 +87,11 @@ export const StyledContact = styled.div`
     align-items: flex-start;
     font-size: 1.1rem;
   }
+  @media only screen and (min-device-width: 300px) and (max-device-width: 850px) and (orientation: landscape) {
+    font-size: 0.95rem;
+    flex-direction: row;
+    align-items: center;
+  }
 `
 
 export const StyledLinkWrapper = styled.div`
@@ -99,7 +104,6 @@ export const StyledLink = styled.a`
   margin-right: 25px;
   cursor: pointer;
   font-size: 1.5rem;
-  // color: black;
   color: var(--social);
 
   @media (max-width: 850px) {
@@ -110,7 +114,6 @@ export const StyledLink = styled.a`
 export const StyledHtmlLink = styled.div`
   color: var(--textNormal);
   a {
-    // color: #007bff;
     color: var(--textSpecial);
   }
 `
