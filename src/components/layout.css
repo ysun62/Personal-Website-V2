@@ -666,9 +666,8 @@ ul li::before {
 /* Header burger */
 header .toggler {
   position: fixed;
-  font-size: 10px;
-  right: 30px;
-  top: 30px;
+  right: 5%;
+  top: 5%;
   z-index: 200;
   cursor: pointer;
 }
