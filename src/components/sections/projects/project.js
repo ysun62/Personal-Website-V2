@@ -105,14 +105,18 @@ export default function Project({ data }) {
       </CardContent>
       <CardActions className={classes.bottomRight}>
         <Tippy content="Demo" arrow="">
-          <a href={demo} target="_blank" className={classes.link}>
-            <FiExternalLink />
-          </a>
+          {demo && (
+            <a href={demo} target="_blank" className={classes.link}>
+              <FiExternalLink />
+            </a>
+          )}
         </Tippy>
         <Tippy content="Github" arrow="">
-          <a href={github} target="_blank" className={classes.link}>
-            <FaGithub />
-          </a>
+          {github && (
+            <a href={github} target="_blank" className={classes.link}>
+              <FaGithub />
+            </a>
+          )}
         </Tippy>
       </CardActions>
     </Card>

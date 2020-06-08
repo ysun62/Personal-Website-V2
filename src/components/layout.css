@@ -637,8 +637,8 @@ ul li::before {
 header .burger {
   position: fixed;
   font-size: 10px;
-  right: 20px;
-  top: 15px;
+  right: 30px;
+  top: 30px;
   display: none;
   z-index: 200;
 }
