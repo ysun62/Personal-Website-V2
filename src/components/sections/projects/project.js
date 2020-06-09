@@ -134,6 +134,7 @@ export default function Project({ data }) {
               target="_blank"
               className={classes.action}
               rel="noopener noreferrer"
+              aria-label="Demo"
             >
               <FiExternalLink />
             </a>
@@ -146,6 +147,7 @@ export default function Project({ data }) {
               target="_blank"
               className={classes.action}
               rel="noopener noreferrer"
+              aria-label="GitHub"
             >
               <FaGithub />
             </a>

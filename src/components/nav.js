@@ -4,7 +4,7 @@ import { Link } from "react-scroll"
 import Burger from "@animated-burgers/burger-rotate"
 import "@animated-burgers/burger-rotate/dist/styles.css"
 
-import SideDrawer from "./sideDrawer"
+import { SideDrawer } from "./"
 import useWindowSize from "./hooks/useWindowSize"
 
 export default function Nav() {

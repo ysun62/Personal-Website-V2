@@ -104,7 +104,11 @@ const Hero = ({ data }) => {
       <StyledWrapper>
         <StyledTitle>
           {frontmatter.title}
-          <StyledTitleSpan className="wave">👋</StyledTitleSpan>
+          <StyledTitleSpan className="wave">
+            <span role="img" aria-label="">
+              👋
+            </span>
+          </StyledTitleSpan>
         </StyledTitle>
         {
           <StyledSubtitle
@@ -118,6 +122,7 @@ const Hero = ({ data }) => {
               href="https://github.com/ysun62"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub"
             >
               <FaGithub />
             </StyledSocial>
@@ -125,6 +130,7 @@ const Hero = ({ data }) => {
               href="https://www.linkedin.com/in/yanglsun/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
             >
               <FaLinkedinIn />
             </StyledSocial>
@@ -132,6 +138,7 @@ const Hero = ({ data }) => {
               href="mailto:ysun9596@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Email"
             >
               <FiMail />
             </StyledSocial>
@@ -139,6 +146,7 @@ const Hero = ({ data }) => {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Resume"
             >
               <AiOutlineFilePdf />
             </StyledSocial>

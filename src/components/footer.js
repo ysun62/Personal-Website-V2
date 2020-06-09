@@ -31,6 +31,7 @@ export default function Footer() {
             href="https://github.com/ysun62"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
           >
             <FaGithub />
           </StyledFooterLink>
@@ -38,6 +39,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/yanglsun/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
           >
             <FaLinkedinIn />
           </StyledFooterLink>
@@ -45,6 +47,7 @@ export default function Footer() {
             href="mailto:ysun9596@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Email"
           >
             <FiMail />
           </StyledFooterLink>
@@ -52,6 +55,7 @@ export default function Footer() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Resume"
           >
             <AiOutlineFilePdf />
           </StyledFooterLink>

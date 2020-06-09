@@ -1,6 +1,6 @@
 import React from "react"
 import "./layout.css"
-import ThemeToggle from "./themeToggle"
+import { ThemeToggle } from "./"
 import useWindowSize from "./hooks/useWindowSize"
 
 const Header = () => {

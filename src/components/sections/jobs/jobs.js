@@ -51,7 +51,7 @@ const StyledButton = styled.button`
   outline: none;
   background: none;
   color: ${props =>
-    props.id === props.activeTabIndex
+    props.index === props.activeTabIndex
       ? "var(--textSpecial)"
       : "var(--normalText)"};
 
@@ -81,7 +81,7 @@ const Jobs = ({ data }) => {
       <StyledWrapper>
         <StyledTitle>Experience</StyledTitle>
         <StyledContent>
-          <StyledUL>
+          <StyledUL aria-label="Job tabs">
             {data.map((d, i) => {
               return (
                 <StyledLi
@@ -90,15 +90,14 @@ const Jobs = ({ data }) => {
                   key={i}
                   onClick={() => setActiveTabIndex(i)}
                 >
-                  <StyledButton id={i} activeTabIndex={activeTabIndex}>
-                    {d.node.frontmatter.companyAbbrev}
+                  <StyledButton index={i}>
+                    <span>{d.node.frontmatter.companyAbbrev}</span>
                   </StyledButton>
                 </StyledLi>
               )
             })}
             <StyledLine activeTabIndex={activeTabIndex}></StyledLine>
           </StyledUL>
-          {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
           <Job data={data[activeTabIndex]} />
         </StyledContent>
       </StyledWrapper>

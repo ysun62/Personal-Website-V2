@@ -3,7 +3,7 @@ import { Link } from "react-scroll"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
-import ThemeToggle from "./themeToggle"
+import { ThemeToggle } from "./"
 
 const StyledMenu = styled.nav`
   box-sizing: border-box;
