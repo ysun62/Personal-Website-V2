@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Practice`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Young Sun | Front End Engineer`,
+    description: `Young Sun is a passionate front end engineer who is dedicated to building modern & highly scalable web apps.`,
+    siteUrl: `https://ysun.me/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -20,13 +20,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        name: "Yang Sun",
+        short_name: "Yang Sun",
+        start_url: "/",
+        background_color: "var(--bg)",
+        theme_color: "var(--bg)",
+        display: "minimal-ui",
+        icon: "src/images/logo.png",
       },
     },
     {
@@ -77,6 +77,12 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "151013820",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

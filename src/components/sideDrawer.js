@@ -48,7 +48,7 @@ const StyledToggler = styled.div`
   cursor: pointer;
   position: absolute;
   left: 50%;
-  bottom: 20%;
+  bottom: 17%;
   transform: translate(-50%, -50%);
 `
 
