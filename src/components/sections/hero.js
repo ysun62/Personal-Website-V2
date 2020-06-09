@@ -126,7 +126,7 @@ const Hero = ({ data }) => {
             <StyledSocial href="mailto:ysun9596@gmail.com" target="_blank">
               <FiMail />
             </StyledSocial>
-            <StyledSocial href="#" target="_blank">
+            <StyledSocial href="/resume.pdf" target="_blank">
               <AiOutlineFilePdf />
             </StyledSocial>
           </StyledSocialWrapper>

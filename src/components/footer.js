@@ -39,7 +39,7 @@ export default function Footer() {
           <StyledFooterLink href="mailto:ysun9596@gmail.com" target="_blank">
             <FiMail />
           </StyledFooterLink>
-          <StyledFooterLink target="_blank">
+          <StyledFooterLink href="/resume.pdf" target="_blank">
             <AiOutlineFilePdf />
           </StyledFooterLink>
         </StyledSocialWrapper>
