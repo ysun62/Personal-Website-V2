@@ -111,6 +111,7 @@ export const StyledSocial = styled.a`
 
 export const StyledLink = styled.a`
   color: var(--textSpecial);
+  display: inline-block;
 
   &::after {
     content: "";
@@ -134,13 +135,14 @@ export const StyledHtmlLink = styled.div`
   a {
     position: relative;
     color: var(--textSpecial);
+    display: inline-block;
   }
 
   a::after {
     content: "";
     display: inline-block;
     position: absolute;
-    bottom: -3px;
+    bottom: 0px;
     left: 0;
     height: 2px;
     width: 0%;
