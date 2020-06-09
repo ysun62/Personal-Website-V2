@@ -37,7 +37,7 @@ export default function Job(props) {
       <StyledTitle>
         {title}{" "}
         <span style={{ position: "relative" }}>
-          <StyledLink href={url} target="_blank">
+          <StyledLink href={url} target="_blank" rel="noopener noreferrer">
             @ {company}
           </StyledLink>
         </span>

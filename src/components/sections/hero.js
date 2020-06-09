@@ -114,19 +114,32 @@ const Hero = ({ data }) => {
         <StyledContact>
           <span style={{ marginRight: "30px" }}>{frontmatter.contact}</span>
           <StyledSocialWrapper>
-            <StyledSocial href="https://github.com/ysun62" target="_blank">
+            <StyledSocial
+              href="https://github.com/ysun62"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaGithub />
             </StyledSocial>
             <StyledSocial
               href="https://www.linkedin.com/in/yanglsun/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <FaLinkedinIn />
             </StyledSocial>
-            <StyledSocial href="mailto:ysun9596@gmail.com" target="_blank">
+            <StyledSocial
+              href="mailto:ysun9596@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FiMail />
             </StyledSocial>
-            <StyledSocial href="/resume.pdf" target="_blank">
+            <StyledSocial
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <AiOutlineFilePdf />
             </StyledSocial>
           </StyledSocialWrapper>

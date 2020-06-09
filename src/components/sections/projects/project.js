@@ -129,14 +129,24 @@ export default function Project({ data }) {
       <CardActions className={classes.bottomRight}>
         <Tippy content="Demo" arrow="">
           {demo && (
-            <a href={demo} target="_blank" className={classes.action}>
+            <a
+              href={demo}
+              target="_blank"
+              className={classes.action}
+              rel="noopener noreferrer"
+            >
               <FiExternalLink />
             </a>
           )}
         </Tippy>
         <Tippy content="Github" arrow="">
           {github && (
-            <a href={github} target="_blank" className={classes.action}>
+            <a
+              href={github}
+              target="_blank"
+              className={classes.action}
+              rel="noopener noreferrer"
+            >
               <FaGithub />
             </a>
           )}

@@ -27,19 +27,32 @@ export default function Footer() {
     <StyledFooter>
       <StyledContact>
         <StyledSocialWrapper>
-          <StyledFooterLink href="https://github.com/ysun62" target="_blank">
+          <StyledFooterLink
+            href="https://github.com/ysun62"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaGithub />
           </StyledFooterLink>
           <StyledFooterLink
             href="https://www.linkedin.com/in/yanglsun/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <FaLinkedinIn />
           </StyledFooterLink>
-          <StyledFooterLink href="mailto:ysun9596@gmail.com" target="_blank">
+          <StyledFooterLink
+            href="mailto:ysun9596@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FiMail />
           </StyledFooterLink>
-          <StyledFooterLink href="/resume.pdf" target="_blank">
+          <StyledFooterLink
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <AiOutlineFilePdf />
           </StyledFooterLink>
         </StyledSocialWrapper>
@@ -53,7 +66,11 @@ export default function Footer() {
         }}
       >
         Young Sun 2020 - Powered by{" "}
-        <a href="https://www.gatsbyjs.org/" target="_blank">
+        <a
+          href="https://www.gatsbyjs.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span style={{ color: "#532C84" }}>Gatsby</span>
         </a>{" "}
         ❤️
