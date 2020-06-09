@@ -1,11 +1,13 @@
 import React from "react"
 import styled from "styled-components"
+import PropTypes from "prop-types"
+
 import {
   StyledSection,
   StyledWrapper,
   StyledTitle,
   StyledContent,
-} from "../styles/content"
+} from "../styles/sharedStyle"
 
 const SkillsContainer = styled.ul`
   display: grid;
@@ -45,6 +47,10 @@ const About = ({ data }) => {
       </StyledWrapper>
     </StyledSection>
   )
+}
+
+About.propTypes = {
+  data: PropTypes.array.isRequired,
 }
 
 export default About

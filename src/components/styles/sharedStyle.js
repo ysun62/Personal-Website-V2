@@ -14,7 +14,6 @@ export const StyledWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  //   margin-right: 30px;
 
   @media (max-width: 1024px) {
     // width: 70vw;
@@ -35,7 +34,6 @@ export const StyledTitle = styled.h5`
   padding-right: 70px;
   width: 200px;
   text-align: right;
-  // color: #005ec2;
   color: var(--textSpecial);
 
   @media (max-width: 1300px) {
@@ -94,13 +92,13 @@ export const StyledContact = styled.div`
   }
 `
 
-export const StyledLinkWrapper = styled.div`
+export const StyledSocialWrapper = styled.div`
   @media (max-width: 850px) {
     margin-top: 10px;
   }
 `
 
-export const StyledLink = styled.a`
+export const StyledSocial = styled.a`
   margin-right: 25px;
   cursor: pointer;
   font-size: 1.5rem;
@@ -111,9 +109,46 @@ export const StyledLink = styled.a`
   }
 `
 
+export const StyledLink = styled.a`
+  color: var(--textSpecial);
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--textSpecial);
+  }
+
+  &:hover ::after {
+    width: 100%;
+    transition: 0.3s ease-in;
+  }
+`
+
 export const StyledHtmlLink = styled.div`
   color: var(--textNormal);
   a {
+    position: relative;
     color: var(--textSpecial);
+  }
+
+  a::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--textSpecial);
+  }
+
+  a:hover ::after {
+    width: 100%;
+    transition: 0.3s ease-in;
   }
 `

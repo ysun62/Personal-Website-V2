@@ -1,11 +1,10 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import Bounce from "react-reveal/Bounce"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 
 const StyledSvg = styled.svg`
   fill: var(--textSpecial);
-  // position: fixed;
   width: 30px;
   height: 30px;
 `

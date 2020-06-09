@@ -3,8 +3,6 @@ import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
 import { Layout, Hero, About, Jobs, Projects } from "../components"
-// import Image from "../components/image"
-// import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => (
   <Layout>

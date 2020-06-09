@@ -1,11 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
+import PropTypes from "prop-types"
+
 import {
   StyledSection,
   StyledWrapper,
   StyledTitle,
   StyledContent,
-} from "../../styles/content"
+} from "../../styles/sharedStyle"
 import Project from "./project"
 
 const StyledGrid = styled.div`
@@ -34,6 +36,10 @@ const Projects = ({ data }) => {
       </StyledWrapper>
     </StyledSection>
   )
+}
+
+Projects.propTypes = {
+  data: PropTypes.array.isRequired,
 }
 
 export default Projects

@@ -3,7 +3,13 @@ import styled, { keyframes } from "styled-components"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa"
 import { FiMail } from "react-icons/fi"
 import { AiOutlineFilePdf } from "react-icons/ai"
-import { StyledContact, StyledLinkWrapper, StyledLink } from "../styles/content"
+import PropTypes from "prop-types"
+
+import {
+  StyledContact,
+  StyledSocialWrapper,
+  StyledSocial,
+} from "../styles/sharedStyle"
 
 const StyledSection = styled.section`
   height: 100vh;
@@ -107,27 +113,31 @@ const Hero = ({ data }) => {
         }
         <StyledContact>
           <span style={{ marginRight: "30px" }}>{frontmatter.contact}</span>
-          <StyledLinkWrapper>
-            <StyledLink href="https://github.com/ysun62" target="_blank">
+          <StyledSocialWrapper>
+            <StyledSocial href="https://github.com/ysun62" target="_blank">
               <FaGithub />
-            </StyledLink>
-            <StyledLink
+            </StyledSocial>
+            <StyledSocial
               href="https://www.linkedin.com/in/yanglsun/"
               target="_blank"
             >
               <FaLinkedinIn />
-            </StyledLink>
-            <StyledLink href="mailto:ysun9596@gmail.com" target="_blank">
+            </StyledSocial>
+            <StyledSocial href="mailto:ysun9596@gmail.com" target="_blank">
               <FiMail />
-            </StyledLink>
-            <StyledLink href="#" target="_blank">
+            </StyledSocial>
+            <StyledSocial href="#" target="_blank">
               <AiOutlineFilePdf />
-            </StyledLink>
-          </StyledLinkWrapper>
+            </StyledSocial>
+          </StyledSocialWrapper>
         </StyledContact>
       </StyledWrapper>
     </StyledSection>
   )
+}
+
+Hero.propTypes = {
+  data: PropTypes.array.isRequired,
 }
 
 export default Hero

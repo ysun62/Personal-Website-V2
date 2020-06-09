@@ -1,11 +1,13 @@
 import React, { useState } from "react"
 import styled from "styled-components"
+import PropTypes from "prop-types"
+
 import {
   StyledSection,
   StyledWrapper,
   StyledTitle,
   StyledContent,
-} from "../../styles/content"
+} from "../../styles/sharedStyle"
 import Job from "./job"
 
 const StyledUL = styled.ul`
@@ -102,6 +104,10 @@ const Jobs = ({ data }) => {
       </StyledWrapper>
     </StyledSection>
   )
+}
+
+Jobs.propTypes = {
+  data: PropTypes.array.isRequired,
 }
 
 export default Jobs

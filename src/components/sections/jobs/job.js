@@ -1,5 +1,8 @@
 import React from "react"
 import styled from "styled-components"
+import PropTypes from "prop-types"
+
+import { StyledLink } from "../../styles/sharedStyle"
 
 const StyledTitle = styled.h4`
   margin-bottom: 0.2rem;
@@ -33,9 +36,11 @@ export default function Job(props) {
     <div style={{ position: "relative" }}>
       <StyledTitle>
         {title}{" "}
-        <a href={url} target="_blank">
-          @ {company}
-        </a>
+        <span style={{ position: "relative" }}>
+          <StyledLink href={url} target="_blank">
+            @ {company}
+          </StyledLink>
+        </span>
       </StyledTitle>
       <StyledSub>{location}</StyledSub>
       <StyledSub>{range}</StyledSub>
@@ -45,4 +50,8 @@ export default function Job(props) {
       {}
     </div>
   )
+}
+
+Job.propTypes = {
+  data: PropTypes.object.isRequired,
 }

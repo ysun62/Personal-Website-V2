@@ -3,12 +3,14 @@ import styled from "styled-components"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa"
 import { FiMail } from "react-icons/fi"
 import { AiOutlineFilePdf } from "react-icons/ai"
-import { StyledContact, StyledLinkWrapper, StyledLink } from "./styles/content"
+
+import {
+  StyledContact,
+  StyledSocialWrapper,
+  StyledSocial,
+} from "./styles/sharedStyle"
 
 const StyledFooter = styled.footer`
-  //   position: absolute;
-  //   bottom: 0;
-  //   left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,7 +18,7 @@ const StyledFooter = styled.footer`
   padding: 120px 0 40px 0;
 `
 
-const StyledFooterLink = styled(StyledLink)`
+const StyledFooterLink = styled(StyledSocial)`
   margin: 0 10px;
 `
 
@@ -24,7 +26,7 @@ export default function Footer() {
   return (
     <StyledFooter>
       <StyledContact>
-        <StyledLinkWrapper>
+        <StyledSocialWrapper>
           <StyledFooterLink href="https://github.com/ysun62" target="_blank">
             <FaGithub />
           </StyledFooterLink>
@@ -40,7 +42,7 @@ export default function Footer() {
           <StyledFooterLink target="_blank">
             <AiOutlineFilePdf />
           </StyledFooterLink>
-        </StyledLinkWrapper>
+        </StyledSocialWrapper>
       </StyledContact>
       <div
         style={{
@@ -50,7 +52,11 @@ export default function Footer() {
           fontWeight: "500",
         }}
       >
-        Young Sun 2020 - Powered by Gatsby ❤️
+        Young Sun 2020 - Powered by{" "}
+        <a href="https://www.gatsbyjs.org/" target="_blank">
+          <span style={{ color: "#532C84" }}>Gatsby</span>
+        </a>{" "}
+        ❤️
       </div>
     </StyledFooter>
   )

@@ -8,7 +8,9 @@ import Card from "@material-ui/core/Card"
 import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
 import Typography from "@material-ui/core/Typography"
-import { StyledHtmlLink } from "../../styles/content"
+import PropTypes from "prop-types"
+
+import { StyledHtmlLink } from "../../styles/sharedStyle"
 
 const useStyles = makeStyles({
   root: {
@@ -22,11 +24,7 @@ const useStyles = makeStyles({
     backgroundColor: "var(--cardBg)",
     color: "var(--textNormal)",
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
+  bullet: {},
   numbering: {
     fontSize: 14,
   },
@@ -105,13 +103,13 @@ export default function Project({ data }) {
               if (techLen !== i && i !== 0) {
                 return (
                   <li className={classes.li} key={i}>
-                    &nbsp;{t} ●
+                    &nbsp;{t} {bull}
                   </li>
                 )
               } else if (i === 0) {
                 return (
                   <li className={classes.li} key={i}>
-                    {t} ●
+                    {t} {bull}
                   </li>
                 )
               } else {
@@ -146,4 +144,8 @@ export default function Project({ data }) {
       </CardActions>
     </Card>
   )
+}
+
+Project.propTypes = {
+  data: PropTypes.object.isRequired,
 }
