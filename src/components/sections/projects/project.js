@@ -36,7 +36,7 @@ const useStyles = makeStyles({
     fontSize: 16,
   },
   pos: {
-    marginBottom: 15,
+    marginBottom: 20,
   },
   mb: {
     marginBottom: 50,
@@ -62,6 +62,7 @@ const useStyles = makeStyles({
     fontSize: 15,
     color: "var(--textSubTitle)",
     fontStyle: "italic",
+    marginBottom: 0,
 
     "&::before": {
       content: '""',
