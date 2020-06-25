@@ -77,7 +77,7 @@ export default function Footer() {
         >
           <span style={{ color: "#532C84" }}>Gatsby</span>
         </a>{" "}
-        <span role="img" aria-label="heart">
+        <span role="img" aria-label="Heart">
           ❤️
         </span>
       </div>

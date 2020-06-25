@@ -105,7 +105,7 @@ const Hero = ({ data }) => {
         <StyledTitle>
           {frontmatter.title}
           <StyledTitleSpan className="wave">
-            <span role="img" aria-label="">
+            <span role="img" aria-label="Waving hand">
               👋
             </span>
           </StyledTitleSpan>
