@@ -1,8 +1,8 @@
 ---
 date: "2019-04-01"
 title: "Grader"
-companyAbbrev: "UCSC"
 company: "University of California, Santa Cruz"
+companyAbbrev: "UCSC"
 location: "Santa Cruz, CA"
 range: "Apr 2019 - Jun 2019"
 url: "https://www.ucsc.edu/"

@@ -151,6 +151,6 @@ export const StyledHtmlLink = styled.div`
 
   a:hover ::after {
     width: 100%;
-    transition: 0.3s ease-in;
+    transition: 0.2s ease-in;
   }
 `

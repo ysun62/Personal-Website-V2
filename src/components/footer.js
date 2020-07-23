@@ -52,7 +52,7 @@ export default function Footer() {
             <FiMail />
           </StyledFooterLink>
           <StyledFooterLink
-            href="/resume.pdf"
+            href="/Young-Sun-Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Resume"

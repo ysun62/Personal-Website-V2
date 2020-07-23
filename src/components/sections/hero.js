@@ -143,7 +143,7 @@ const Hero = ({ data }) => {
               <FiMail />
             </StyledSocial>
             <StyledSocial
-              href="/resume.pdf"
+              href="/Young-Sun-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Resume"

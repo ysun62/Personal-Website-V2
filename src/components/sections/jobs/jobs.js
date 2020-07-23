@@ -15,7 +15,8 @@ const StyledUL = styled.ul`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  max-width: 450px;
+  min-width: 300px;
+  max-width: 550px;
   border-top: 3px solid var(--sliderBorder);
   margin-left: 0;
 
@@ -65,7 +66,7 @@ const StyledLine = styled.span`
   top: -3px;
   left: 0;
   height: 3px;
-  width: 33.333%;
+  width: 25%;
   background: var(--textSpecial);
   transition: 0.3s;
   transform: translateX(
@@ -75,7 +76,7 @@ const StyledLine = styled.span`
 
 const Jobs = ({ data }) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0)
-
+  console.log(data)
   return (
     <StyledSection id="work">
       <StyledWrapper>
