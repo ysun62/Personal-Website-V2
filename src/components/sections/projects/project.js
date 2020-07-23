@@ -1,161 +1,152 @@
 import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
+import styled from "styled-components"
 import { FaGithub } from "react-icons/fa"
 import { FiExternalLink } from "react-icons/fi"
 import Tippy from "@tippyjs/react"
 import "tippy.js/dist/tippy.css"
-import Card from "@material-ui/core/Card"
-import CardActions from "@material-ui/core/CardActions"
-import CardContent from "@material-ui/core/CardContent"
-import Typography from "@material-ui/core/Typography"
 import PropTypes from "prop-types"
 
 import { StyledHtmlLink } from "../../styles/sharedStyle"
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 135,
-    // maxWidth: 550,
-    minHeight: 370,
-    position: "relative",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    backgroundColor: "var(--cardBg)",
-    color: "var(--textNormal)",
-  },
-  bullet: {},
-  numbering: {
-    fontSize: 14,
-  },
-  title: {
-    fontSize: "1.4rem",
-    color: "var(--textTitle)",
-  },
-  desc: {
-    fontSize: 16,
-  },
-  pos: {
-    marginBottom: 20,
-  },
-  mb: {
-    marginBottom: 50,
-  },
-  action: {
-    color: "var(--social)",
-    marginRight: "12px",
-    fontSize: "1.3rem",
-  },
-  bottomRight: {
-    position: "absolute",
-    bottom: "8px",
-    right: "5px",
-  },
-  ul: {
-    margin: "0",
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "flex-start",
-  },
-  li: {
-    // paddingRight: 13,
-    fontSize: 15,
-    color: "var(--textSubTitle)",
-    fontStyle: "italic",
-    marginBottom: 0,
+const StyledCard = styled.div`
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  min-height: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--cardBg);
+  color: var(--textNormal);
+  padding: 1rem 1.25rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  margin-bottom: 50px;
+  position: relative;
+`
 
-    "&::before": {
-      content: '""',
-    },
-  },
-})
+const StyledHeader = styled.div``
+
+const StyledNumbering = styled.div`
+  color: var(--textSpecial);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.35em;
+`
+
+const StyledTitle = styled.h5`
+  font-size: 1.4rem;
+  color: var(--textTitle);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0;
+`
+
+const StyledTech = styled.div`
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.54);
+`
+
+const StyledList = styled.ul`
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+`
+
+const StyledListItem = styled.li`
+  font-size: 0.85rem;
+  color: var(--textSubTitle);
+  font-style: italic;
+  margin-bottom: 0;
+
+  &::before {
+    content: "";
+  }
+`
+
+const StyledBody = styled.div`
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  font-size: 0.9rem;
+`
+
+const StyledFooter = styled.footer`
+  position: absolute;
+  bottom: 1rem;
+  right: 0.4rem;
+`
+
+const StyledLink = styled.a`
+  color: var(--social);
+  margin-right: 0.85rem;
+  font-size: 1.3rem;
+`
 
 export default function Project({ data }) {
-  const classes = useStyles()
-  const bull = <span className={classes.bullet}>•</span>
+  const bullet = <span>•</span>
   const { frontmatter, html } = data.node
   const { numbering, title, github, demo, tech } = frontmatter
   const techLen = tech.length - 1
 
   return (
-    <Card className={`${classes.root} ${classes.mb}`}>
-      <CardContent style={{ width: "88%" }}>
-        <Typography
-          className={classes.numbering}
-          style={{
-            color: "var(--textSpecial)",
-            fontSize: "0.9rem",
-            fontWeight: "600",
-          }}
-          gutterBottom
-        >
-          {numbering}
-        </Typography>
-        <Typography variant="h5" component="h1" className={classes.title}>
-          {title}
-        </Typography>
-        <Typography
-          className={classes.pos}
-          color="textSecondary"
-          component="div"
-        >
-          <ul className={classes.ul}>
-            {tech.map((t, i) => {
-              if (techLen !== i && i !== 0) {
-                return (
-                  <li className={classes.li} key={i}>
-                    &nbsp;{t} {bull}
-                  </li>
-                )
-              } else if (i === 0) {
-                return (
-                  <li className={classes.li} key={i}>
-                    {t} {bull}
-                  </li>
-                )
-              } else {
-                return (
-                  <li className={classes.li} key={i}>
-                    &nbsp;{t}
-                  </li>
-                )
-              }
-            })}
-          </ul>
-        </Typography>
-        <Typography variant="body2" component="div" className={classes.desc}>
+    <StyledCard>
+      <div>
+        <StyledHeader>
+          <StyledNumbering>{numbering}</StyledNumbering>
+          <StyledTitle>{title}</StyledTitle>
+          <StyledTech>
+            <StyledList>
+              {tech.map((t, i) => {
+                if (techLen !== i && i !== 0) {
+                  return (
+                    <StyledListItem key={i}>
+                      &nbsp;{t} {bullet}
+                    </StyledListItem>
+                  )
+                } else if (i === 0) {
+                  return (
+                    <StyledListItem key={i}>
+                      {t} {bullet}
+                    </StyledListItem>
+                  )
+                } else {
+                  return <StyledListItem key={i}>&nbsp;{t}</StyledListItem>
+                }
+              })}
+            </StyledList>
+          </StyledTech>
+        </StyledHeader>
+        <StyledBody>
           <StyledHtmlLink dangerouslySetInnerHTML={{ __html: html }} />
-        </Typography>
-      </CardContent>
-      <CardActions className={classes.bottomRight}>
+        </StyledBody>
+      </div>
+      <StyledFooter>
         <Tippy content="Demo" arrow="">
           {demo && (
-            <a
+            <StyledLink
               href={demo}
               target="_blank"
-              className={classes.action}
               rel="noopener noreferrer"
               aria-label="Demo"
             >
               <FiExternalLink />
-            </a>
+            </StyledLink>
           )}
         </Tippy>
         <Tippy content="Github" arrow="">
           {github && (
-            <a
+            <StyledLink
               href={github}
               target="_blank"
-              className={classes.action}
               rel="noopener noreferrer"
               aria-label="GitHub"
             >
               <FaGithub />
-            </a>
+            </StyledLink>
           )}
         </Tippy>
-      </CardActions>
-    </Card>
+      </StyledFooter>
+    </StyledCard>
   )
 }
 

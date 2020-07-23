@@ -16,6 +16,10 @@ const StyledGrid = styled.div`
   position: relative;
   gap: 15px;
 
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 400px));
+  }
+
   @media (max-width: 350px) {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
