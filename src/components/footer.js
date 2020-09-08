@@ -22,6 +22,27 @@ const StyledFooterLink = styled(StyledSocial)`
   margin: 0 10px;
 `
 
+const StyledSpan = styled.span`
+  display: inline-block;
+  color: #532c84;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: #532c84;
+  }
+
+  &:hover ::after {
+    width: 100%;
+    transition: 0.3s ease-in;
+  }
+`
+
 export default function Footer() {
   return (
     <StyledFooter>
@@ -74,8 +95,9 @@ export default function Footer() {
           href="https://www.gatsbyjs.org/"
           target="_blank"
           rel="noopener noreferrer"
+          style={{ position: "relative" }}
         >
-          <span style={{ color: "#532C84" }}>Gatsby</span>
+          <StyledSpan>Gatsby</StyledSpan>
         </a>{" "}
         <span role="img" aria-label="Heart">
           ❤️

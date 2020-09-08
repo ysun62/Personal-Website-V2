@@ -96,6 +96,10 @@ const StyledSubtitle = styled.h2`
   }
 `
 
+const StyledContactSpan = styled.span`
+  margin-right: 30px;
+`
+
 const Hero = ({ data }) => {
   const { frontmatter, html } = data[0].node
 
@@ -116,7 +120,7 @@ const Hero = ({ data }) => {
           ></StyledSubtitle>
         }
         <StyledContact>
-          <span style={{ marginRight: "30px" }}>{frontmatter.contact}</span>
+          <StyledContactSpan>{frontmatter.contact}</StyledContactSpan>
           <StyledSocialWrapper>
             <StyledSocial
               href="https://github.com/ysun62"

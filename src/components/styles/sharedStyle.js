@@ -4,7 +4,6 @@ export const StyledSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  //   width: 100vw;
   color: var(--textNormal);
 `
 
