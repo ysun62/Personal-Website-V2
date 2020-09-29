@@ -2,30 +2,37 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
-import { StyledLink } from "../../styles/sharedStyle"
+import mixins from "../../../styles/mixins"
 
 const StyledTitle = styled.h4`
-  margin-bottom: 0.2rem;
-  color: var(--textTitle);
-  font-size: 1.1rem;
+  color: ${props => props.theme.textTitle};
+  font-size: 1.1em;
 
   > a {
-    color: var(--textSpecial);
+    color: ${props => props.theme.textSpecial};
   }
 `
 
-const StyledSub = styled.h5`
-  margin-bottom: 0.2rem;
+const StyledLink = styled.a`
+  ${mixins.underlineLink}
+`
+
+const StyledSubTitle = styled.h5`
+  margin-top: ${props => props.theme.space[0]};
   font-weight: 500;
-  font-size: 0.8rem;
-  color: var(--textSubTitle);
+  color: ${props => props.theme.textSubTitle};
   font-style: italic;
+  font-size: 0.75em;
 `
 
 const StyledTasks = styled.div`
-  margin-top: 1.5rem;
-  font-size: 1rem;
-  color: var(--textNormal);
+  position: relative;
+  margin-top: ${props => props.theme.space[4]};
+  color: ${props => props.theme.textNormal};
+
+  ul {
+    margin-left: ${props => props.theme.space[4]};
+  }
 `
 
 export default function Job(props) {
@@ -33,17 +40,17 @@ export default function Job(props) {
   const { title, company, location, range, url } = frontmatter
 
   return (
-    <div style={{ position: "relative" }}>
+    <div>
       <StyledTitle>
         {title}{" "}
-        <span style={{ position: "relative" }}>
+        <span>
           <StyledLink href={url} target="_blank" rel="noopener noreferrer">
             @ {company}
           </StyledLink>
         </span>
       </StyledTitle>
-      <StyledSub>{location}</StyledSub>
-      <StyledSub>{range}</StyledSub>
+      <StyledSubTitle>{location}</StyledSubTitle>
+      <StyledSubTitle>{range}</StyledSubTitle>
       <StyledTasks>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </StyledTasks>

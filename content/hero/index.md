@@ -1,5 +1,5 @@
 ---
-title: Hi!
+title: Hello!
 contact: Get in touch
 ---
 

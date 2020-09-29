@@ -3,62 +3,57 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 
 import {
-  StyledSection,
-  StyledWrapper,
+  Section,
   StyledTitle,
   StyledContent,
-} from "../../styles/sharedStyle"
+} from "../../../styles/sharedStyle"
 import Job from "./job"
+import mixins from "../../../styles/mixins"
+import media from "../../../styles/media"
 
-const StyledUL = styled.ul`
+const StyledUl = styled.ul`
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  min-width: 300px;
+  ${mixins.flexStart}
+  min-width: 240px;
   max-width: 550px;
-  border-top: 3px solid var(--sliderBorder);
+  border-top: 3px solid ${props => props.theme.sliderBorder};
   margin-left: 0;
+  margin-bottom: ${props => props.theme.space[3]};
 
   > li::before {
     content: "";
   }
+
+  ${media.md`
+    margin-bottom: ${props => props.theme.space[1]};
+  `}
 `
 
 const StyledLi = styled.li`
-  font-size: 1.3rem;
-  width: 100%;
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
+  width: calc(100% / 4);
   cursor: pointer;
-  align-items: center;
   text-align: center;
   font-weight: 400;
+  display: inline-block;
 
   &:hover {
-    background: var(--btnBg);
+    background: ${props => props.theme.btnBg};
   }
   &:hover > button {
-    color: var(--textSpecial);
+    color: ${props => props.theme.textSpecial};
   }
 `
 
 const StyledButton = styled.button`
   cursor: pointer;
-  padding: 5px 15px;
+  padding: ${props => props.theme.space[0]} 0;
+  width: 100%;
   border: none;
-  outline: none;
   background: none;
   color: ${props =>
     props.index === props.activeTabIndex
-      ? "var(--textSpecial)"
-      : "var(--normalText)"};
-
-  @media (max-width: 850px) {
-    font-size: 0.85rem;
-  }
+      ? props.theme.textSpecial
+      : props.theme.textNormal};
 `
 
 const StyledLine = styled.span`
@@ -67,42 +62,40 @@ const StyledLine = styled.span`
   left: 0;
   height: 3px;
   width: 25%;
-  background: var(--textSpecial);
+  background: ${props => props.theme.textSpecial};
   transition: 0.3s;
-  transform: translateX(
-    ${props => (props.activeTabIndex > 0 ? props.activeTabIndex * 100 : 0)}%
-  );
+  // prettier-ignore
+  transform: translateX(${props =>
+    props.activeTabIndex > 0 ? props.activeTabIndex * 100 : 0}%);
 `
 
 const Jobs = ({ data }) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0)
-  console.log(data)
+
   return (
-    <StyledSection id="work">
-      <StyledWrapper>
-        <StyledTitle>Experience</StyledTitle>
-        <StyledContent>
-          <StyledUL aria-label="Job tabs">
-            {data.map((d, i) => {
-              return (
-                <StyledLi
-                  isActive={activeTabIndex === i}
-                  activeTabIndex={activeTabIndex}
-                  key={i}
-                  onClick={() => setActiveTabIndex(i)}
-                >
-                  <StyledButton index={i}>
-                    <span>{d.node.frontmatter.companyAbbrev}</span>
-                  </StyledButton>
-                </StyledLi>
-              )
-            })}
-            <StyledLine activeTabIndex={activeTabIndex}></StyledLine>
-          </StyledUL>
-          <Job data={data[activeTabIndex]} />
-        </StyledContent>
-      </StyledWrapper>
-    </StyledSection>
+    <Section id="work">
+      <StyledTitle>Experience</StyledTitle>
+      <StyledContent>
+        <StyledUl aria-label="Job tabs">
+          {data.map((d, i) => {
+            return (
+              <StyledLi
+                isActive={activeTabIndex === i}
+                activeTabIndex={activeTabIndex}
+                key={i}
+                onClick={() => setActiveTabIndex(i)}
+              >
+                <StyledButton index={i} activeTabIndex={activeTabIndex}>
+                  <span>{d.node.frontmatter.companyAbbrev}</span>
+                </StyledButton>
+              </StyledLi>
+            )
+          })}
+          <StyledLine activeTabIndex={activeTabIndex}></StyledLine>
+        </StyledUl>
+        <Job data={data[activeTabIndex]} />
+      </StyledContent>
+    </Section>
   )
 }
 
