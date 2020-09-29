@@ -22,13 +22,6 @@ const StyledNav = styled.nav`
   width: 100%;
   z-index: 50;
 
-  ul {
-    height: 50%;
-    ${mixins.flexAround}
-    flex-direction: column;
-    margin-left: 0;
-  }
-
   a {
     font-size: ${props => props.theme.fontSizes.md[1]};
     font-weight: bold;
@@ -43,17 +36,16 @@ const StyledNav = styled.nav`
 `
 
 const StyledUl = styled.ul`
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 0;
+
   > li::before {
     content: "";
   }
-`
-
-const StyledToggler = styled.div`
-  cursor: pointer;
-  position: absolute;
-  left: 50%;
-  bottom: 8%;
-  transform: translate(-50%, -50%);
 `
 
 export default function SideDrawer({ isOpen, toggleBurger }) {
@@ -112,10 +104,11 @@ export default function SideDrawer({ isOpen, toggleBurger }) {
             <span>Projects</span>
           </Link>
         </li>
+
+        <li>
+          <ThemeToggle />
+        </li>
       </StyledUl>
-      <StyledToggler>
-        <ThemeToggle />
-      </StyledToggler>
     </StyledNav>
   )
 }

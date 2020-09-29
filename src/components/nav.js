@@ -5,7 +5,6 @@ import Burger from "@animated-burgers/burger-rotate"
 import "@animated-burgers/burger-rotate/dist/styles.css"
 
 import { SideDrawer } from "./"
-import mixins from "../styles/mixins"
 import media from "../styles/media"
 
 const StyledNav = styled.nav`
@@ -26,7 +25,9 @@ const StyledUl = styled.ul`
   `};
 
   > li {
-    ${mixins.flexEnd}
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     width: 50px;
 
     &::before {

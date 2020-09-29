@@ -9,7 +9,7 @@ import mixins from "../../../styles/mixins"
 
 const StyledCard = styled.div`
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  min-height: 370px;
+  min-height: 330px;
   background-color: ${props => props.theme.cardBg};
   color: ${props => props.theme.textNormal};
   padding: ${props => props.theme.space[3]} 1.25rem;
@@ -29,7 +29,7 @@ const StyledTitle = styled.h4`
   color: ${props => props.theme.textTitle};
   line-height: 1.2;
   margin-bottom: 0;
-  font-size: 1.1em;
+  font-size: 1.15em;
 `
 
 const StyledTech = styled.div`
@@ -62,7 +62,7 @@ const StyledBody = styled.div`
 
 const StyledBodyHtml = styled.div`
   color: ${props => props.theme.textNormal};
-  font-size: 0.85em;
+  font-size: 0.9em;
   padding-bottom: ${props => props.theme.space[3]};
 
   a {

@@ -8,12 +8,10 @@ import {
   StyledContent,
 } from "../../../styles/sharedStyle"
 import Job from "./job"
-import mixins from "../../../styles/mixins"
 import media from "../../../styles/media"
 
 const StyledUl = styled.ul`
   position: relative;
-  ${mixins.flexStart}
   min-width: 240px;
   max-width: 550px;
   border-top: 3px solid ${props => props.theme.sliderBorder};

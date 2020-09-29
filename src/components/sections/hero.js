@@ -19,7 +19,7 @@ const StyledSection = styled(Section)`
     align-items: flex-start;
   `};
   ${media.sm`
-    padding: ${props => props.theme.space[5]};
+    padding: 2.5rem;
   `};
   ${media.xs`
     padding: ${props => props.theme.space[4]};
@@ -65,6 +65,7 @@ const StyledIntro = styled.h2`
 
 const StyledContactSpan = styled.span`
   margin-right: ${props => props.theme.space[5]};
+  font-weight: 350;
 `
 
 const Hero = ({ data }) => {

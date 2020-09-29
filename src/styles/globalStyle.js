@@ -44,7 +44,6 @@ export const GlobalStyle = createGlobalStyle`
     }
     h1, h2 {
         font-size: ${props => props.theme.fontSizes.xl[2]};
-        font-weight: 350;
     }
     h3 {
         font-weight: 700;
@@ -127,5 +126,8 @@ export const GlobalStyle = createGlobalStyle`
     }
     .active .dot {
         background: ${props => props.theme.textSpecial};
+    }
+    svg {
+        stroke-width: 1.5;
     }
 `

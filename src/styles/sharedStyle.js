@@ -15,8 +15,8 @@ export const Section = styled.section`
     padding: ${props => props.theme.space[7]};
   `}
   ${media.sm`
-    padding-left: ${props => props.theme.space[5]};
-    padding-right: ${props => props.theme.space[5]};
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   `}
   ${media.xs`
     padding: ${props => props.theme.space[6]} ${props => props.theme.space[4]};
