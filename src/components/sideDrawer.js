@@ -4,15 +4,14 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 
 import { ThemeToggle } from "./"
+import mixins from "../styles/mixins"
 
-const StyledMenu = styled.nav`
+const StyledNav = styled.nav`
   box-sizing: border-box;
-  display: flex;
+  ${mixins.flexCenter}
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  background: var(--sideDrawerBg);
+  background: ${props => props.theme.sideDrawerBg};
   transform: ${({ isOpen }) =>
     isOpen ? "translateX(0%)" : "translateX(100%)"};
   height: 100vh;
@@ -24,23 +23,28 @@ const StyledMenu = styled.nav`
   z-index: 50;
 
   ul {
-    height: 45%;
-    display: flex;
+    height: 50%;
+    ${mixins.flexAround}
     flex-direction: column;
-    justify-content: space-around;
     margin-left: 0;
   }
 
   a {
-    font-size: 1.1rem;
+    font-size: ${props => props.theme.fontSizes.md[1]};
     font-weight: bold;
     cursor: pointer;
-    color: var(--textTitle);
+    color: ${props => props.theme.textTitle};
     transition: color 0.3s linear;
   }
 
   .mobile-active {
-    color: var(--textSpecial);
+    color: ${props => props.theme.textSpecial};
+  }
+`
+
+const StyledUl = styled.ul`
+  > li::before {
+    content: "";
   }
 `
 
@@ -48,14 +52,14 @@ const StyledToggler = styled.div`
   cursor: pointer;
   position: absolute;
   left: 50%;
-  bottom: 17%;
+  bottom: 8%;
   transform: translate(-50%, -50%);
 `
 
 export default function SideDrawer({ isOpen, toggleBurger }) {
   return (
-    <StyledMenu className="mobile-nav" isOpen={isOpen}>
-      <ul className="mobile-nav-items">
+    <StyledNav isOpen={isOpen}>
+      <StyledUl>
         <li>
           <Link
             activeClass="mobile-active"
@@ -66,7 +70,7 @@ export default function SideDrawer({ isOpen, toggleBurger }) {
             duration={300}
             onClick={toggleBurger}
           >
-            <span className="">Intro</span>
+            <span>Intro</span>
           </Link>
         </li>
         <li>
@@ -79,7 +83,7 @@ export default function SideDrawer({ isOpen, toggleBurger }) {
             duration={300}
             onClick={toggleBurger}
           >
-            <span className="">About</span>
+            <span>About</span>
           </Link>
         </li>
         <li>
@@ -92,7 +96,7 @@ export default function SideDrawer({ isOpen, toggleBurger }) {
             duration={300}
             onClick={toggleBurger}
           >
-            <span className="">Experience</span>
+            <span>Experience</span>
           </Link>
         </li>
         <li>
@@ -105,14 +109,14 @@ export default function SideDrawer({ isOpen, toggleBurger }) {
             duration={300}
             onClick={toggleBurger}
           >
-            <span className="">Projects</span>
+            <span>Projects</span>
           </Link>
         </li>
-      </ul>
+      </StyledUl>
       <StyledToggler>
         <ThemeToggle />
       </StyledToggler>
-    </StyledMenu>
+    </StyledNav>
   )
 }
 

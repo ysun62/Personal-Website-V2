@@ -1,61 +1,31 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import { FaGithub, FaLinkedinIn } from "react-icons/fa"
-import { FiMail } from "react-icons/fi"
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi"
 import { AiOutlineFilePdf } from "react-icons/ai"
 import PropTypes from "prop-types"
 
-import {
-  StyledContact,
-  StyledSocialWrapper,
-  StyledSocial,
-} from "../styles/sharedStyle"
+import { Section, StyledContact, StyledSocial } from "../../styles/sharedStyle"
+import media from "../../styles/media"
 
-const StyledSection = styled.section`
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--textNormal);
-`
-
-const StyledWrapper = styled.div`
-  width: 80vw;
-  height: 80vh;
-  padding: 50px 140px;
-  display: flex;
+const StyledSection = styled(Section)`
+  min-height: 100vh;
   flex-direction: column;
   justify-content: space-around;
-  box-sizing: border-box;
+  padding: ${props => props.theme.space[7]};
+  max-width: 1400px;
 
-  @media (max-width: 1300px) {
-    padding: 50px 0;
-  }
-  @media (max-width: 1024px) {
-    padding: 120px 0;
-  }
-  @media (max-width: 850px) {
-    padding: 0;
-  }
-  @media only screen and (min-device-width: 300px) and (max-device-width: 850px) and (orientation: landscape) {
-    font-size: 0.5rem;
-  }
+  ${media.md`
+    padding: ${props => props.theme.space[6]};
+    align-items: flex-start;
+  `};
+  ${media.sm`
+    padding: ${props => props.theme.space[5]};
+  `};
+  ${media.xs`
+    padding: ${props => props.theme.space[4]};
+  `}
 `
 
-const StyledTitle = styled.h1`
-  font-weight: 300;
-  font-size: 2.4rem;
-
-  @media (max-width: 1024px) {
-    font-size: 2rem;
-  }
-  @media (max-width: 850px) {
-    font-size: 2rem;
-  }
-  @media only screen and (min-device-width: 300px) and (max-device-width: 850px) and (orientation: landscape) {
-    font-size: 1.5rem;
-  }
-`
 const wave = keyframes`
 0% { transform: rotate(  0.0deg) }
 10% { transform: rotate(-10.0deg) }
@@ -66,34 +36,35 @@ const wave = keyframes`
 100% { transform: rotate(  0.0deg) }
 `
 
-const StyledTitleSpan = styled.span`
+const StyledHand = styled.span`
   animation-name: ${wave};
   animation-duration: 2.5s;
   animation-iteration-count: infinite;
   transform-origin: 70% 70%;
   display: inline-block;
-  margin-left: 15px;
+  margin-left: ${props => props.theme.space[2]};
 `
 
-const StyledSubtitle = styled.h2`
-  font-weight: 300;
+const StyledIntro = styled.h2`
   max-width: 700px;
-  font-size: 2.4rem;
 
+  > p {
+    margin: 0;
+    font: inherit;
+    line-height: 1.5;
+  }
   > p > strong {
     color: #005ec2;
-    color: var(--textSpecial);
+    color: ${props => props.theme.textSpecial};
   }
 
-  @media (max-width: 1024px) {
-    font-size: 2rem;
-  }
-  @media (max-width: 850px) {
-    font-size: 1.6rem;
-  }
-  @media only screen and (min-device-width: 300px) and (max-device-width: 850px) and (orientation: landscape) {
-    font-size: 1.5rem;
-  }
+  ${media.md`
+      max-width: 650px;
+  `}
+`
+
+const StyledContactSpan = styled.span`
+  margin-right: ${props => props.theme.space[5]};
 `
 
 const Hero = ({ data }) => {
@@ -101,58 +72,52 @@ const Hero = ({ data }) => {
 
   return (
     <StyledSection id="intro">
-      <StyledWrapper>
-        <StyledTitle>
-          {frontmatter.title}
-          <StyledTitleSpan className="wave">
-            <span role="img" aria-label="Waving hand">
-              👋
-            </span>
-          </StyledTitleSpan>
-        </StyledTitle>
-        {
-          <StyledSubtitle
-            dangerouslySetInnerHTML={{ __html: html }}
-          ></StyledSubtitle>
-        }
-        <StyledContact>
-          <span style={{ marginRight: "30px" }}>{frontmatter.contact}</span>
-          <StyledSocialWrapper>
-            <StyledSocial
-              href="https://github.com/ysun62"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <FaGithub />
-            </StyledSocial>
-            <StyledSocial
-              href="https://www.linkedin.com/in/yanglsun/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedinIn />
-            </StyledSocial>
-            <StyledSocial
-              href="mailto:ysun9596@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Email"
-            >
-              <FiMail />
-            </StyledSocial>
-            <StyledSocial
-              href="/Young-Sun-Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Resume"
-            >
-              <AiOutlineFilePdf />
-            </StyledSocial>
-          </StyledSocialWrapper>
-        </StyledContact>
-      </StyledWrapper>
+      <h1>
+        {frontmatter.title}
+        <StyledHand className="wave">
+          <span role="img" aria-label="Waving hand">
+            👋
+          </span>
+        </StyledHand>
+      </h1>
+      <StyledIntro dangerouslySetInnerHTML={{ __html: html }}></StyledIntro>
+      <StyledContact>
+        <StyledContactSpan>{frontmatter.contact}</StyledContactSpan>
+        <div>
+          <StyledSocial
+            href="https://github.com/ysun62"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <FiGithub />
+          </StyledSocial>
+          <StyledSocial
+            href="https://www.linkedin.com/in/yanglsun/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FiLinkedin />
+          </StyledSocial>
+          <StyledSocial
+            href="mailto:ysun9596@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Email"
+          >
+            <FiMail />
+          </StyledSocial>
+          <StyledSocial
+            href="/Young-Sun-Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Resume"
+          >
+            <AiOutlineFilePdf />
+          </StyledSocial>
+        </div>
+      </StyledContact>
     </StyledSection>
   )
 }

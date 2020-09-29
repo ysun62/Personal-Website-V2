@@ -1,12 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { withTheme } from "styled-components"
 
 import { Header, Footer, Nav, SEO } from "./"
-import "./layout.css"
+import { GlobalStyle } from "../styles/globalStyle"
 
-const Layout = ({ children }) => {
+const Layout = withTheme(({ children, theme }) => {
   return (
     <>
+      <GlobalStyle theme={theme} />
       <SEO />
       <Header />
       <Nav />
@@ -14,7 +16,7 @@ const Layout = ({ children }) => {
       <Footer />
     </>
   )
-}
+})
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

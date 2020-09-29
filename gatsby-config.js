@@ -7,7 +7,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    "gatsby-plugin-dark-mode",
     `gatsby-plugin-preact`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -21,8 +20,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Yang Sun",
-        short_name: "Yang Sun",
+        name: "Young Sun",
+        short_name: "Young Sun",
         start_url: "/",
         background_color: "#0a192f",
         theme_color: "#0a192f",
@@ -63,6 +62,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/projects`,
         name: "projects",
+      },
+    },
+    {
+      resolve: `gatsby-styled-components-dark-mode`,
+      options: {
+        light: require(`${__dirname}/src/styles/theme.js`).lightTheme,
+        dark: require(`${__dirname}/src/styles/theme.js`).darkTheme,
       },
     },
     "gatsby-transformer-remark",

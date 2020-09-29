@@ -1,39 +1,57 @@
 import React from "react"
 import styled from "styled-components"
-import { FaGithub, FaLinkedinIn } from "react-icons/fa"
-import { FiMail } from "react-icons/fi"
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi"
 import { AiOutlineFilePdf } from "react-icons/ai"
 
-import {
-  StyledContact,
-  StyledSocialWrapper,
-  StyledSocial,
-} from "./styles/sharedStyle"
+import { StyledContact, StyledSocial } from "../styles/sharedStyle"
+import mixins from "../styles/mixins"
+import media from "../styles/media"
 
 const StyledFooter = styled.footer`
-  display: flex;
+  ${mixins.flexCenter}
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 120px 0 40px 0;
+  padding: ${props => props.theme.space[8]} 0 ${props => props.theme.space[6]} 0;
+
+  ${media.sm`
+    padding-left: ${props => props.theme.space[4]};
+    padding-right: ${props => props.theme.space[4]};
+  `}
 `
 
 const StyledFooterLink = styled(StyledSocial)`
   margin: 0 10px;
 `
 
+const StyledGatsbyLink = styled.a`
+  ${mixins.underlineLink}
+  color: #532c84;
+
+  &::after {
+    bottom: 0px;
+    background: #532c84;
+  }
+`
+
+const StyledMetaData = styled.div`
+  text-align: center;
+  padding-top: 15px;
+  color: ${props => props.theme.textTitle};
+  font-size: 0.9rem;
+  font-weight: 500;
+`
+
 export default function Footer() {
   return (
     <StyledFooter>
       <StyledContact>
-        <StyledSocialWrapper>
+        <div>
           <StyledFooterLink
             href="https://github.com/ysun62"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
           >
-            <FaGithub />
+            <FiGithub />
           </StyledFooterLink>
           <StyledFooterLink
             href="https://www.linkedin.com/in/yanglsun/"
@@ -41,7 +59,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             aria-label="LinkedIn"
           >
-            <FaLinkedinIn />
+            <FiLinkedin />
           </StyledFooterLink>
           <StyledFooterLink
             href="mailto:ysun9596@gmail.com"
@@ -59,28 +77,21 @@ export default function Footer() {
           >
             <AiOutlineFilePdf />
           </StyledFooterLink>
-        </StyledSocialWrapper>
+        </div>
       </StyledContact>
-      <div
-        style={{
-          paddingTop: "15px",
-          color: "var(--textTitle)",
-          fontSize: "0.9rem",
-          fontWeight: "500",
-        }}
-      >
+      <StyledMetaData>
         Young Sun 2020 - Powered by{" "}
-        <a
+        <StyledGatsbyLink
           href="https://www.gatsbyjs.org/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span style={{ color: "#532C84" }}>Gatsby</span>
-        </a>{" "}
+          Gatsby
+        </StyledGatsbyLink>{" "}
         <span role="img" aria-label="Heart">
           ❤️
         </span>
-      </div>
+      </StyledMetaData>
     </StyledFooter>
   )
 }

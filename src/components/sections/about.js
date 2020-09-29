@@ -2,32 +2,25 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
-import {
-  StyledSection,
-  StyledWrapper,
-  StyledTitle,
-  StyledContent,
-} from "../styles/sharedStyle"
+import { Section, StyledTitle, StyledContent } from "../../styles/sharedStyle"
+import media from "../../styles/media"
 
-const SkillsContainer = styled.ul`
+const StyledSkills = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 200px));
-  padding: 0;
-  margin: 20px 0 0 0;
-  list-style: none;
 
-  @media (max-width: 310px) {
+  ${media.xxs`
     grid-template-columns: repeat(1, minmax(140px, 200px));
-  }
+  `}
 `
 
-const Skill = styled.li`
+const StyledSkill = styled.li`
   position: relative;
-  margin-bottom: 10px;
-  padding-left: 25px;
+  margin-bottom: ${props => props.theme.space[1]};
+  padding-left: ${props => props.theme.space[4]};
   display: flex;
   align-items: center;
-  font-size: 0.8em;
+  font-size: 85%;
 `
 
 const About = ({ data }) => {
@@ -35,17 +28,18 @@ const About = ({ data }) => {
   const { title, skills } = frontmatter
 
   return (
-    <StyledSection id="about">
-      <StyledWrapper>
-        <StyledTitle>{title}</StyledTitle>
-        <StyledContent>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-          <SkillsContainer>
-            {skills && skills.map((skill, i) => <Skill key={i}>{skill}</Skill>)}
-          </SkillsContainer>
-        </StyledContent>
-      </StyledWrapper>
-    </StyledSection>
+    <Section id="about">
+      <StyledTitle>{title}</StyledTitle>
+      <StyledContent>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <StyledSkills>
+          {skills &&
+            skills.map((skill, i) => (
+              <StyledSkill key={i}>{skill}</StyledSkill>
+            ))}
+        </StyledSkills>
+      </StyledContent>
+    </Section>
   )
 }
 
