@@ -10,21 +10,23 @@ import {
 import Job from "./job"
 import media from "../../../styles/media"
 
-const StyledUl = styled.ul`
+const StyledUlContainer = styled.div`
   position: relative;
   min-width: 240px;
   max-width: 550px;
-  border-top: 3px solid ${props => props.theme.sliderBorder};
-  margin-left: 0;
   margin-bottom: ${props => props.theme.space[3]};
-
-  > li::before {
-    content: "";
-  }
 
   ${media.md`
     margin-bottom: ${props => props.theme.space[1]};
   `}
+`
+
+const StyledUl = styled.ul`
+  border-top: 3px solid ${props => props.theme.sliderBorder};
+
+  > li::before {
+    content: "";
+  }
 `
 
 const StyledLi = styled.li`
@@ -54,9 +56,9 @@ const StyledButton = styled.button`
       : props.theme.textNormal};
 `
 
-const StyledLine = styled.span`
+const StyledLine = styled.div`
   position: absolute;
-  top: -3px;
+  top: 0;
   left: 0;
   height: 3px;
   width: 25%;
@@ -74,23 +76,25 @@ const Jobs = ({ data }) => {
     <Section id="work">
       <StyledTitle>Experience</StyledTitle>
       <StyledContent>
-        <StyledUl aria-label="Job tabs">
-          {data.map((d, i) => {
-            return (
-              <StyledLi
-                isActive={activeTabIndex === i}
-                activeTabIndex={activeTabIndex}
-                key={i}
-                onClick={() => setActiveTabIndex(i)}
-              >
-                <StyledButton index={i} activeTabIndex={activeTabIndex}>
-                  <span>{d.node.frontmatter.companyAbbrev}</span>
-                </StyledButton>
-              </StyledLi>
-            )
-          })}
+        <StyledUlContainer>
+          <StyledUl aria-label="Job tabs">
+            {data.map((d, i) => {
+              return (
+                <StyledLi
+                  isActive={activeTabIndex === i}
+                  activeTabIndex={activeTabIndex}
+                  key={i}
+                  onClick={() => setActiveTabIndex(i)}
+                >
+                  <StyledButton index={i} activeTabIndex={activeTabIndex}>
+                    <span>{d.node.frontmatter.companyAbbrev}</span>
+                  </StyledButton>
+                </StyledLi>
+              )
+            })}
+          </StyledUl>
           <StyledLine activeTabIndex={activeTabIndex}></StyledLine>
-        </StyledUl>
+        </StyledUlContainer>
         <Job data={data[activeTabIndex]} />
       </StyledContent>
     </Section>

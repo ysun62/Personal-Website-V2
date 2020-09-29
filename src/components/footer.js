@@ -24,11 +24,11 @@ const StyledFooterLink = styled(StyledSocial)`
 
 const StyledGatsbyLink = styled.a`
   ${mixins.underlineLink}
-  color: #532c84;
+  color: #8a4baf;
 
   &::after {
     bottom: 0px;
-    background: #532c84;
+    background: #8a4baf;
   }
 `
 
