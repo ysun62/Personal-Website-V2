@@ -4,7 +4,7 @@ title: "Front End Engineer (Freelance)"
 company: "C&I Studios"
 companyAbbrev: "C&I"
 location: "Remote"
-range: "July 2020 - Present"
+range: "July 2020 - Aug 2020"
 url: "https://c-istudios.com/"
 ---
 
