@@ -31,8 +31,8 @@ export const Section = styled.section`
 
 export const Title = styled.h3`
   padding-right: 70px;
-  width: 240px;
-  max-width: 240px;
+  width: 253px;
+  max-width: 253px;
   text-align: right;
   letter-spacing: 3px;
   text-transform: uppercase;
