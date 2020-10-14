@@ -20,13 +20,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Young Sun",
         short_name: "Young Sun",
+        name: "Young Sun Portfolio",
         start_url: "/",
         background_color: "#0a192f",
         theme_color: "#0a192f",
         display: "minimal-ui",
         icon: "src/images/sun.png",
+        theme_color_in_head: false,
       },
     },
     {

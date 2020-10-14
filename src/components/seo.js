@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { ThemeManagerContext } from "gatsby-styled-components-dark-mode"
 
 function SEO() {
   const { site } = useStaticQuery(
@@ -20,6 +21,8 @@ function SEO() {
 
   const { title, description, siteUrl } = site.siteMetadata
 
+  const themeContext = useContext(ThemeManagerContext)
+
   return (
     <Helmet
       htmlAttributes={{
@@ -28,39 +31,43 @@ function SEO() {
       title={title}
       meta={[
         {
-          name: `description`,
+          name: "description",
           content: description,
         },
         {
-          property: `og:title`,
+          name: "theme-color",
+          content: `${themeContext.isDark ? "#0a192f" : "rgb(252, 252, 252)"}`,
+        },
+        {
+          property: "og:title",
           content: title,
         },
         {
-          property: `og:description`,
+          property: "og:description",
           content: description,
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: "og:type",
+          content: "website",
         },
         {
-          property: `og:site_name`,
+          property: "og:site_name",
           content: title,
         },
         {
-          property: `og:url`,
+          property: "og:url",
           content: siteUrl,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          name: "twitter:card",
+          content: "summary",
         },
         {
-          name: `twitter:title`,
+          name: "twitter:title",
           content: title,
         },
         {
-          name: `twitter:description`,
+          name: "twitter:description",
           content: description,
         },
       ]}
@@ -69,9 +76,9 @@ function SEO() {
 }
 
 SEO.defaultProps = {
-  title: ``,
-  description: ``,
-  siteUrl: ``,
+  title: "",
+  description: "",
+  siteUrl: "",
 }
 
 SEO.propTypes = {
