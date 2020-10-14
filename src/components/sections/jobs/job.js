@@ -5,9 +5,6 @@ import PropTypes from "prop-types"
 import mixins from "../../../styles/mixins"
 
 const StyledTitle = styled.h4`
-  color: ${props => props.theme.textTitle};
-  font-size: 1.1em;
-
   > a {
     color: ${props => props.theme.textSpecial};
   }
@@ -28,7 +25,6 @@ const StyledSubTitle = styled.h5`
 const StyledTasks = styled.div`
   position: relative;
   margin-top: ${props => props.theme.space[4]};
-  color: ${props => props.theme.textNormal};
 
   ul {
     margin-left: ${props => props.theme.space[4]};

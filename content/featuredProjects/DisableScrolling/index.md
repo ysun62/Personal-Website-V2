@@ -1,11 +1,14 @@
 ---
 order: 1
-numbering: "01."
-title: "Disable Scrolling Browser Extension"
+numbering: "I."
+title: "Disable Scrolling"
+image: "./mac.png"
 github: "https://github.com/ysun62/Disable-Scrolling-Extension"
+youtube: "https://www.youtube.com/embed/-LYzpa5H0_o"
 demo: "https://chrome.google.com/webstore/detail/disable-scrolling/dmjigjnpimhlighaibpchommlmnlkmlg/"
 tech:
   - React
+  - JavaScript
   - JS
   - CSS
 ---

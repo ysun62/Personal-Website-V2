@@ -159,6 +159,19 @@ export default function Nav() {
           <li>
             <Link
               activeClass="active"
+              to="featured"
+              spy={true}
+              offset={-60}
+              smooth={true}
+              duration={300}
+            >
+              <StyledDot className="dot"></StyledDot>
+            </Link>
+            <StyledDotLabel className="dot-label">Featured</StyledDotLabel>
+          </li>
+          <li>
+            <Link
+              activeClass="active"
               to="projects"
               spy={true}
               offset={-60}

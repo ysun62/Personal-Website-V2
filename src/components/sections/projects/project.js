@@ -1,17 +1,15 @@
 import React from "react"
 import styled from "styled-components"
-import { FiGithub, FiExternalLink } from "react-icons/fi"
-import Tippy from "@tippyjs/react"
-import "tippy.js/dist/tippy.css"
 import PropTypes from "prop-types"
 
+import ProjectLinks from "../../common/ProjectLinks"
 import mixins from "../../../styles/mixins"
+import { TechList } from "../../../styles/sharedStyle"
 
 const StyledCard = styled.div`
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   min-height: 330px;
   background-color: ${props => props.theme.cardBg};
-  color: ${props => props.theme.textNormal};
   padding: ${props => props.theme.space[3]} 1.25rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -26,32 +24,8 @@ const StyledNumbering = styled.div`
 `
 
 const StyledTitle = styled.h4`
-  color: ${props => props.theme.textTitle};
   line-height: 1.2;
   margin-bottom: 0;
-  font-size: 1.15em;
-`
-
-const StyledTech = styled.div`
-  margin-bottom: 1.3rem;
-  color: rgba(0, 0, 0, 0.54);
-`
-
-const StyledList = styled.ul`
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-`
-
-const StyledListItem = styled.li`
-  color: ${props => props.theme.textSubTitle};
-  font-style: italic;
-  margin-bottom: -0.4rem;
-  font-size: 0.78em;
-
-  &::before {
-    content: "";
-  }
 `
 
 const StyledBody = styled.div`
@@ -61,9 +35,8 @@ const StyledBody = styled.div`
 `
 
 const StyledBodyHtml = styled.div`
-  color: ${props => props.theme.textNormal};
   font-size: 0.9em;
-  padding-bottom: ${props => props.theme.space[3]};
+  padding-bottom: 2.5rem;
 
   a {
     ${mixins.underlineLink}
@@ -71,6 +44,10 @@ const StyledBodyHtml = styled.div`
     &::after {
       bottom: 0px;
     }
+  }
+
+  p {
+    margin-bottom: ${props => props.theme.space[3]};
   }
 `
 
@@ -81,16 +58,6 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-`
-
-const StyledLink = styled.a`
-  color: ${props => props.theme.social};
-  margin-left: 0.85rem;
-  font-size: 1.3rem;
-
-  > svg {
-    vertical-align: middle;
-  }
 `
 
 export default function Project({ data }) {
@@ -104,56 +71,33 @@ export default function Project({ data }) {
       <header>
         <StyledNumbering>{numbering}</StyledNumbering>
         <StyledTitle>{title}</StyledTitle>
-        <StyledTech>
-          <StyledList>
+        <div>
+          <TechList>
             {tech.map((t, i) => {
               if (techLen !== i && i !== 0) {
                 return (
-                  <StyledListItem key={i}>
+                  <li key={i}>
                     &nbsp;{t} {bullet}
-                  </StyledListItem>
+                  </li>
                 )
               } else if (i === 0) {
                 return (
-                  <StyledListItem key={i}>
+                  <li key={i}>
                     {t} {bullet}
-                  </StyledListItem>
+                  </li>
                 )
               } else {
-                return <StyledListItem key={i}>&nbsp;{t}</StyledListItem>
+                return <li key={i}>&nbsp;{t}</li>
               }
             })}
-          </StyledList>
-        </StyledTech>
+          </TechList>
+        </div>
       </header>
       <StyledBody>
         <StyledBodyHtml dangerouslySetInnerHTML={{ __html: html }} />
       </StyledBody>
       <StyledFooter>
-        <Tippy content="Demo" arrow="">
-          {demo && (
-            <StyledLink
-              href={demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Demo"
-            >
-              <FiExternalLink />
-            </StyledLink>
-          )}
-        </Tippy>
-        <Tippy content="Github" arrow="">
-          {github && (
-            <StyledLink
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <FiGithub />
-            </StyledLink>
-          )}
-        </Tippy>
+        <ProjectLinks demo={demo} github={github} />
       </StyledFooter>
     </StyledCard>
   )

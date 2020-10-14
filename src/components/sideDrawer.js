@@ -94,6 +94,19 @@ export default function SideDrawer({ isOpen, toggleBurger }) {
         <li>
           <Link
             activeClass="mobile-active"
+            to="featured"
+            spy={true}
+            offset={-60}
+            smooth={true}
+            duration={300}
+            onClick={toggleBurger}
+          >
+            <span>Featured Projects</span>
+          </Link>
+        </li>
+        <li>
+          <Link
+            activeClass="mobile-active"
             to="projects"
             spy={true}
             offset={-60}
@@ -101,7 +114,7 @@ export default function SideDrawer({ isOpen, toggleBurger }) {
             duration={300}
             onClick={toggleBurger}
           >
-            <span>Projects</span>
+            <span>Other Projects</span>
           </Link>
         </li>
 

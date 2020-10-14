@@ -6,9 +6,15 @@ import media from "./media"
 export const Section = styled.section`
   ${mixins.flexCenter}
   align-items: flex-start;
-  padding: ${props => props.theme.space[8]} ${props => props.theme.space[9]};
+  padding: ${props => props.theme.space[8]} ${props => props.theme.space[6]};
   margin: 0 auto;
+  max-width: 1100px;
 
+  ${media.lg`
+  /* max-width: 900px; */
+    /* padding-left: 0;
+    padding-right: 0; */
+  `}
   ${media.md`
     flex-direction: column;
     align-items: center;
@@ -23,11 +29,12 @@ export const Section = styled.section`
   `}
 `
 
-export const StyledTitle = styled.h3`
+export const Title = styled.h3`
   padding-right: 70px;
-  min-width: 240px;
+  width: 240px;
+  max-width: 240px;
   text-align: right;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: ${props => props.theme.textSpecial};
 
@@ -40,14 +47,16 @@ export const StyledTitle = styled.h3`
   `}
 `
 
-export const StyledContent = styled.div`
+export const Content = styled.div`
   width: 100%;
   font-weight: 300;
-  max-width: 700px;
+  max-width: 650px;
   font-size: ${props => props.theme.fontSizes.md[0]};
 
-  ${media.md`
+  ${media.lg`
     max-width: 550px;
+  `}
+  ${media.md`
     font-size: ${props => props.theme.fontSizes.sm[2]};
   `}
   ${media.sm`
@@ -55,7 +64,7 @@ export const StyledContent = styled.div`
   `}
 `
 
-export const StyledContact = styled.div`
+export const Contact = styled.div`
   font-size: ${props => props.theme.fontSizes.lg[0]};
   ${mixins.flexCenter}
 
@@ -88,8 +97,26 @@ export const StyledContact = styled.div`
   `}
 `
 
-export const StyledSocial = styled.a`
+export const Social = styled.a`
   margin-right: 25px;
   cursor: pointer;
   color: ${props => props.theme.social};
+`
+
+export const TechList = styled.ul`
+  color: rgba(0, 0, 0, 0.54);
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: ${props => props.theme.space[3]};
+
+  > li {
+    color: ${props => props.theme.textSubTitle};
+    margin-bottom: -0.4rem;
+    font-style: italic;
+    font-size: 0.78em;
+
+    &::before {
+      content: "";
+    }
+  }
 `

@@ -2,12 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
-import {
-  Section,
-  StyledTitle,
-  StyledContent,
-} from "../../../styles/sharedStyle"
+import { Section, Title, Content } from "../../../styles/sharedStyle"
 import Project from "./project"
+
+const StyledTitle = styled(Title)`
+  line-height: 1.7rem;
+`
 
 const StyledGrid = styled.div`
   display: grid;
@@ -19,14 +19,14 @@ const StyledGrid = styled.div`
 const Projects = ({ data }) => {
   return (
     <Section id="projects">
-      <StyledTitle>Projects</StyledTitle>
-      <StyledContent>
+      <StyledTitle>Other Projects</StyledTitle>
+      <Content>
         <StyledGrid>
-          {data.map((d, i) => {
-            return <Project data={d} key={i} />
-          })}
+          {data.map((d, i) => (
+            <Project data={d} key={i} />
+          ))}
         </StyledGrid>
-      </StyledContent>
+      </Content>
     </Section>
   )
 }

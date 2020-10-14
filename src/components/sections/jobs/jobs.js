@@ -2,11 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
-import {
-  Section,
-  StyledTitle,
-  StyledContent,
-} from "../../../styles/sharedStyle"
+import { Section, Title, Content } from "../../../styles/sharedStyle"
 import Job from "./job"
 import media from "../../../styles/media"
 
@@ -74,8 +70,8 @@ const Jobs = ({ data }) => {
 
   return (
     <Section id="work">
-      <StyledTitle>Experience</StyledTitle>
-      <StyledContent>
+      <Title>Experience</Title>
+      <Content>
         <StyledUlContainer>
           <StyledUl aria-label="Job tabs">
             {data.map((d, i) => {
@@ -96,7 +92,7 @@ const Jobs = ({ data }) => {
           <StyledLine activeTabIndex={activeTabIndex}></StyledLine>
         </StyledUlContainer>
         <Job data={data[activeTabIndex]} />
-      </StyledContent>
+      </Content>
     </Section>
   )
 }

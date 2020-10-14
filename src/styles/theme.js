@@ -50,7 +50,7 @@ const darkTheme = {
   sliderBorder: "rgb(201, 210, 238)",
   social: "rgb(201, 210, 238)",
   textLink: "#369ab6",
-  textNormal: "rgb(201, 210, 238)",
+  textNormal: "#bcc5e0",
   textSpecial: "#e1b23a",
   textSubTitle: "rgb(136, 146, 176)",
   textTitle: "rgb(204, 214, 246)",

@@ -51,6 +51,8 @@ export const GlobalStyle = createGlobalStyle`
     }
     h4 {
         font-weight: 600;
+        font-size: 1.15em;
+        color: ${props => props.theme.textTitle};
     }
     
     ${media.lg`
@@ -73,6 +75,7 @@ export const GlobalStyle = createGlobalStyle`
         }
         h3 {
             font-size: ${props => props.theme.fontSizes.md[0]};
+            line-height: 1.7rem;
         }
     `}
     ${media.xs`

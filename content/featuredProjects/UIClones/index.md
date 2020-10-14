@@ -1,9 +1,9 @@
 ---
 order: 3
-numbering: "03."
+numbering: "III."
 title: "UI Clones"
+image: "./demo.png"
 github: "https://github.com/ysun62?tab=repositories&q=clone&type=&language="
-demo: ""
 tech:
   - React
   - CSS

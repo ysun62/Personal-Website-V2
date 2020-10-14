@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi"
 import { AiOutlineFilePdf } from "react-icons/ai"
 
-import { StyledContact, StyledSocial } from "../styles/sharedStyle"
+import { Contact, Social } from "../styles/sharedStyle"
 import mixins from "../styles/mixins"
 import media from "../styles/media"
 
@@ -18,7 +18,7 @@ const StyledFooter = styled.footer`
   `}
 `
 
-const StyledFooterLink = styled(StyledSocial)`
+const StyledFooterLink = styled(Social)`
   margin: 0 10px;
 `
 
@@ -41,7 +41,7 @@ const StyledMetaData = styled.div`
 export default function Footer() {
   return (
     <StyledFooter>
-      <StyledContact>
+      <Contact>
         <div>
           <StyledFooterLink
             href="https://github.com/ysun62"
@@ -76,7 +76,7 @@ export default function Footer() {
             <AiOutlineFilePdf />
           </StyledFooterLink>
         </div>
-      </StyledContact>
+      </Contact>
       <StyledMetaData>
         Young Sun 2020 - Powered by{" "}
         <StyledGatsbyLink

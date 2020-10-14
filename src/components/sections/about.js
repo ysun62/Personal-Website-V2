@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
-import { Section, StyledTitle, StyledContent } from "../../styles/sharedStyle"
+import { Section, Title, Content } from "../../styles/sharedStyle"
 import media from "../../styles/media"
 
 const StyledSkills = styled.ul`
@@ -29,8 +29,8 @@ const About = ({ data }) => {
 
   return (
     <Section id="about">
-      <StyledTitle>{title}</StyledTitle>
-      <StyledContent>
+      <Title>{title}</Title>
+      <Content>
         <div dangerouslySetInnerHTML={{ __html: html }} />
         <StyledSkills>
           {skills &&
@@ -38,7 +38,7 @@ const About = ({ data }) => {
               <StyledSkill key={i}>{skill}</StyledSkill>
             ))}
         </StyledSkills>
-      </StyledContent>
+      </Content>
     </Section>
   )
 }

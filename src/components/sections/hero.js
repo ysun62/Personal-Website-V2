@@ -4,7 +4,7 @@ import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi"
 import { AiOutlineFilePdf } from "react-icons/ai"
 import PropTypes from "prop-types"
 
-import { Section, StyledContact, StyledSocial } from "../../styles/sharedStyle"
+import { Section, Contact, Social } from "../../styles/sharedStyle"
 import media from "../../styles/media"
 
 const StyledSection = styled(Section)`
@@ -82,43 +82,43 @@ const Hero = ({ data }) => {
         </StyledHand>
       </h1>
       <StyledIntro dangerouslySetInnerHTML={{ __html: html }}></StyledIntro>
-      <StyledContact>
+      <Contact>
         <StyledContactSpan>{frontmatter.contact}</StyledContactSpan>
         <div>
-          <StyledSocial
+          <Social
             href="https://github.com/ysun62"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
           >
             <FiGithub />
-          </StyledSocial>
-          <StyledSocial
+          </Social>
+          <Social
             href="https://www.linkedin.com/in/yanglsun/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
           >
             <FiLinkedin />
-          </StyledSocial>
-          <StyledSocial
+          </Social>
+          <Social
             href="mailto:ysun9596@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Email"
           >
             <FiMail />
-          </StyledSocial>
-          <StyledSocial
+          </Social>
+          <Social
             href="/Young-Sun-Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Resume"
           >
             <AiOutlineFilePdf />
-          </StyledSocial>
+          </Social>
         </div>
-      </StyledContact>
+      </Contact>
     </StyledSection>
   )
 }
