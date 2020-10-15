@@ -14,13 +14,13 @@ const StyledLink = styled.a`
   }
 `
 
-export default function ProjectLinks({ demo, github }) {
+export default function ProjectLinks({ demo, github, screenshot }) {
   return (
     <>
       <Tippy content="Demo" arrow="">
-        {demo && (
+        {demo || screenshot ? (
           <StyledLink
-            href={demo}
+            href={demo || screenshot.publicURL}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Demo"
@@ -28,7 +28,7 @@ export default function ProjectLinks({ demo, github }) {
           >
             <FiExternalLink />
           </StyledLink>
-        )}
+        ) : null}
       </Tippy>
       <Tippy content="Github" arrow="">
         {github && (

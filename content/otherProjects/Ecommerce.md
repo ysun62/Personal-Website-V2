@@ -1,6 +1,6 @@
 ---
-order: 7
-numbering: "07."
+order: 8
+numbering: "08."
 title: "Ecommerce Website"
 github: "https://github.com/ysun62/Shopping-Website"
 demo: "https://ysun13.pythonanywhere.com/shopping_site/default/index"

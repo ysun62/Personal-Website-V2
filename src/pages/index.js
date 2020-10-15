@@ -98,7 +98,7 @@ export const pageQuery = graphql`
       }
     }
     projects: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/content/projects/" } }
+      filter: { fileAbsolutePath: { regex: "/content/otherProjects/" } }
       sort: { fields: [frontmatter___order], order: ASC }
     ) {
       edges {
@@ -109,6 +109,9 @@ export const pageQuery = graphql`
             github
             demo
             tech
+            screenshot {
+              publicURL
+            }
           }
           html
         }

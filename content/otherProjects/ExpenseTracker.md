@@ -1,6 +1,6 @@
 ---
-order: 3
-numbering: "03."
+order: 4
+numbering: "04."
 title: "React Native Expense Tracker"
 github: "https://github.com/ysun62/React-Native-Expense-Tracker"
 demo: "https://expo.io/@ysun62/Expense-Tracker"

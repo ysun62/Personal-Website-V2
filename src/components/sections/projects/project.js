@@ -20,7 +20,6 @@ const StyledNumbering = styled.div`
   color: ${props => props.theme.textSpecial};
   font-size: 0.9em;
   font-weight: 600;
-  margin-bottom: 0.35em;
 `
 
 const StyledTitle = styled.h4`
@@ -63,7 +62,7 @@ const StyledFooter = styled.footer`
 export default function Project({ data }) {
   const bullet = <span>•</span>
   const { frontmatter, html } = data.node
-  const { numbering, title, github, demo, tech } = frontmatter
+  const { numbering, title, github, demo, tech, screenshot } = frontmatter
   const techLen = tech.length - 1
 
   return (
@@ -97,7 +96,7 @@ export default function Project({ data }) {
         <StyledBodyHtml dangerouslySetInnerHTML={{ __html: html }} />
       </StyledBody>
       <StyledFooter>
-        <ProjectLinks demo={demo} github={github} />
+        <ProjectLinks demo={demo} github={github} screenshot={screenshot} />
       </StyledFooter>
     </StyledCard>
   )

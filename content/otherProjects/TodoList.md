@@ -1,6 +1,6 @@
 ---
-order: 6
-numbering: "06."
+order: 7
+numbering: "07."
 title: "Todo List"
 github: "https://github.com/ysun62/Django-React-Exercise"
 demo: ""

@@ -1,6 +1,6 @@
 ---
-order: 5
-numbering: "05."
+order: 6
+numbering: "06."
 title: "Django Blog"
 github: "https://github.com/ysun62/Django-Blog"
 demo: "https://djangoprojectblogapp.herokuapp.com/"
