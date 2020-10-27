@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Young Sun | Front End Engineer`,
-    description: `Young Sun is a passionate front end engineer who is dedicated to building modern & highly scalable web apps.`,
+    title: `Young Sun | Full Stack Engineer`,
+    description: `Young Sun is a passionate full stack engineer who is dedicated to building modern & highly scalable web apps.`,
     siteUrl: `https://ysun.me/`,
   },
   plugins: [

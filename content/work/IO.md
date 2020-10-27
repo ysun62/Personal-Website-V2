@@ -1,6 +1,6 @@
 ---
 date: "2020-03-15"
-title: "Front End Engineer Intern"
+title: "Front End Engineer (Intern)"
 company: "Infinite Options"
 companyAbbrev: "IO"
 location: "Cupertino, CA"

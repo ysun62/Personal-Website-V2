@@ -1,10 +1,10 @@
 ---
 date: "2020-07-01"
-title: "Front End Engineer (Freelance)"
+title: "Full Stack Engineer (Freelance)"
 company: "C&I Studios"
 companyAbbrev: "C&I"
 location: "Remote"
-range: "July 2020 - Aug 2020"
+range: "July 2020 - Sept 2020"
 url: "https://c-istudios.com/"
 ---
 
