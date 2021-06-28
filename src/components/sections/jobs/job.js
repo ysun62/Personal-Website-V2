@@ -41,7 +41,7 @@ export default function Job(props) {
         {title}{" "}
         <span>
           <StyledLink href={url} target="_blank" rel="noopener noreferrer">
-            @ {company}
+            @{company}
           </StyledLink>
         </span>
       </StyledTitle>

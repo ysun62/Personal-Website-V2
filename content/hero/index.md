@@ -3,4 +3,4 @@ title: Hello!
 contact: Get in touch
 ---
 
-I'm **Young Sun**, a passionate full stack engineer who is dedicated to building modern & highly scalable web apps.
+I'm **Young Sun**, a passionate front end engineer who is dedicated to building modern & highly scalable web apps.

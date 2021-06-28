@@ -3,13 +3,15 @@ title: "About"
 skills:
   - React
   - Redux
-  - JavaScript (ES6+)
-  - TypeScript
+  - JavaScript/TypeScript
+  - HTML5/CSS3
   - Gatsby
-  - Node
+  - Node/Express
+  - GraphQL
+  - MySQL
 ---
 
-I'm a recent grad from the University of California, Santa Cruz. Currently, I'm solidifying my web foundation and adding more skills to my arsenal, as well as **actively seeking full-time/contract opportunities.**
+I am a front end developer who has a huge passion for full stack development. I enjoy creating elegant and performable UIs using React, as well as writing maintainable and scalable logic throughout components that I build.
 
 In my free time, I enjoy shooting hoops, stumping noobs in Dota 2 😈, and keeping myself informed on the latest web technologies.
 

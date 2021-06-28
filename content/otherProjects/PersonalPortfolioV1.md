@@ -7,7 +7,7 @@ demo: "https://ysun.netlify.app/"
 tech:
   - HTML
   - CSS
-  - JS
+  - JavaScript
 ---
 
-My first personal portfolio built using HTML5, CSS3, and JavaScript to showcase other projects.
+The first iteration of my personal portfolio built using HTML5, CSS3, and Vanilla JavaScript to showcase other personal projects.

@@ -9,4 +9,4 @@ tech:
   - Django
 ---
 
-A full stack todo list built using ReactJS and Django which allows the user to create/crossoff/delete todo tasks. Excuse me for the ugly design, this was an exercise project to learn how to use React and Django together in an application.
+A full stack todo list built using ReactJS and Django which allows the user to create/crossoff/delete todo tasks. Excuse the ugly styling, the main focus of this application was the integration of Django and React.

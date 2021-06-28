@@ -9,4 +9,4 @@ tech:
   - Web2py
 ---
 
-Ayy my first ever web application! It's a full stack online shopping website built using Web2py, Vue.js and Python. I discovered my huge passion for web dev through this project.
+A complex full stack online ecommerce website built using Web2py, Vue.js and Python.
